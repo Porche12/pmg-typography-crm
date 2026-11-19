@@ -195,3 +195,77 @@ input[type=range] {
     background: white;
   }
 }
+
+/* ==========================================================================
+   TRANSITIONS.DEV DESIGN TOKENS & MICRO-INTERACTIONS (NO AI-SLOP)
+   Sourced from Jakub Antalik's transitions.dev & Google Labs design.md
+   ========================================================================== */
+
+:root {
+  /* Motion tokens scale */
+  --duration-stagger: 40ms;
+  --duration-micro: 80ms;
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --duration-medium: 350ms;
+  --duration-slow: 400ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: ease-in-out;
+  --ease-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+  /* Modal scaling */
+  --modal-open-dur: 250ms;
+  --modal-close-dur: 150ms;
+  --modal-scale: 0.96;
+  --modal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Tab sliding */
+  --tab-slide-dur: 200ms;
+  --tab-slide-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Modal Smooth Transitions */
+.crm-modal-fullscreen, #orderSuccessModal {
+  transition: opacity var(--modal-open-dur) var(--modal-ease);
+}
+.crm-modal-fullscreen > div, .modal-dialog {
+  transition: transform var(--modal-open-dur) var(--modal-ease), opacity var(--modal-open-dur) var(--modal-ease);
+}
+
+/* Micro-interactions on buttons */
+.button, .pmg-crm-btn, .calc-tab-btn {
+  transition: transform var(--duration-quick) var(--ease-smooth-out), 
+              background-color var(--duration-quick) var(--ease-smooth-out), 
+              box-shadow var(--duration-quick) var(--ease-smooth-out);
+}
+.button:active, .pmg-crm-btn:active, .calc-tab-btn:active {
+  transform: scale(0.97);
+}
+
+/* Subdued Print Rosette Canvas Layer (Canvas-UI Inspired) */
+#cmykCanvasBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.28;
+}
+
+/* Smooth Tabs */
+.calc-tab-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
