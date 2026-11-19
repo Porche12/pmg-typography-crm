@@ -1,10 +1,17 @@
 # Типография PMG — Официальный портал и CRM-система производства
 
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-rose?style=for-the-badge&logo=github)](https://porche12.github.io/pmg-typography-crm/)
+
 Современный веб-портал типографии полного цикла и интегрированная CRM-система управления заказами и производством полиграфии. Реализован на основе структуры и стиля ведущей московской типографии [PMG.ru](https://pmg.ru).
 
 ---
 
-## 🚀 Быстрый старт
+## 🌐 Демонстрация онлайн (GitHub Pages)
+
+Проект опубликован и работает онлайн без необходимости локального развертывания:
+* **Публичный сайт типографии:** [https://porche12.github.io/pmg-typography-crm/](https://porche12.github.io/pmg-typography-crm/)
+* **Интегрированная CRM-система:** [https://porche12.github.io/pmg-typography-crm/#crm](https://porche12.github.io/pmg-typography-crm/#crm)
+* **Отслеживание заказа по номеру:** [https://porche12.github.io/pmg-typography-crm/#track](https://porche12.github.io/pmg-typography-crm/#track)
 
 Проект расположен в:
 ```
