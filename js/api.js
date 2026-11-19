@@ -96,7 +96,7 @@
     // 3. Create Order
     else if (cleanUrl.endsWith('/api/orders') && method === 'POST') {
       const nextNum = 1040 + (db.orders || []).length + 1;
-      const newId = `PMG-${nextNum}`;
+      const newId = `ЮУ-${nextNum}`;
 
       const newOrder = {
         id: newId,
@@ -271,7 +271,7 @@
       const digitsOnly = q.replace(/\D/g, '');
 
       const match = (db.orders || []).find(o => {
-        const orderMatch = o.id.toLowerCase() === q || o.id.toLowerCase() === `pmg-${q}`;
+        const orderMatch = o.id.toLowerCase() === q || o.id.toLowerCase() === `pmg-${q}` || o.id.toLowerCase() === `юу-${q}`;
         const phoneMatch = digitsOnly.length >= 7 && o.client?.phone && o.client.phone.replace(/\D/g, '').includes(digitsOnly);
         return orderMatch || phoneMatch;
       });
@@ -306,7 +306,7 @@
         };
       } else {
         status = 404;
-        responseData = { error: 'Заказ не найден. Проверьте номер заказа (напр. PMG-1048) или телефон.' };
+        responseData = { error: 'Заказ не найден. Проверьте номер заказа (напр. ЮУ-1048) или телефон.' };
       }
     } else {
       status = 404;

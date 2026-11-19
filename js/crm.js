@@ -462,7 +462,7 @@
       <div class="space-y-4">
         <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-200">
           <div>
-            <h3 class="text-lg font-bold text-slate-900">Производственный парк типографии PMG</h3>
+            <h3 class="text-lg font-bold text-slate-900">Производственный парк ИПК «Южный Урал»</h3>
             <p class="text-xs text-slate-500">Мониторинг загрузки печатных и постпечатных машин в цеху 24/7</p>
           </div>
           <div class="text-right">
@@ -875,8 +875,8 @@
       <body>
         <div class="header">
           <div>
-            <div class="title">ТИПОГРАФИЯ PMG • ТЕХНОЛОГИЧЕСКИЙ НАРЯД № ${order.id}</div>
-            <div>Москва, Ленинградский пр-т 80 к30 • Тел: +7 (495) 023-25-51</div>
+            <div class="title">ИПК «ЮЖНЫЙ УРАЛ» • ТЕХНОЛОГИЧЕСКИЙ НАРЯД № ${order.id}</div>
+            <div>460000, г. Оренбург, пер. Свободина, 4, корп. 3 • Тел: +7 (3532) 66-22-11</div>
           </div>
           <div style="text-align: right;">
             <div>Дата запуска: ${new Date(order.createdAt).toLocaleDateString('ru-RU')}</div>
@@ -901,7 +901,7 @@
         </table>
 
         <div class="barcode">
-          *${order.id}* [PMG-PROD-PRINT]
+          *${order.id}* [YU-PROD-PRINT]
         </div>
 
         <div class="stamp">

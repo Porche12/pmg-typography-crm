@@ -1,261 +1,314 @@
-// PMG Typography Portal Main Application
+// Master Controller for IPK Yuzhny Ural Portal
 (function() {
-  const appState = {
-    currentView: 'public', // 'public' or 'crm'
-    catalogFilter: 'all'
-  };
+  let catalogData = null;
 
-  // Switch between Public Site & CRM System
-  function setView(viewName) {
-    appState.currentView = viewName;
+  document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Initialize submodules
+    if (window.URAL_SECURITY) window.URAL_SECURITY.bindPhoneInputs();
+    if (window.URAL_CALC) window.URAL_CALC.init();
+    if (window.URAL_SIMULATOR) window.URAL_SIMULATOR.init();
+    if (window.URAL_PREFLIGHT) window.URAL_PREFLIGHT.init();
 
-    const publicViewEl = document.getElementById('publicView');
-    const crmViewEl = document.getElementById('crmView');
-    const navPublicBtn = document.getElementById('navPublicBtn');
-    const navCrmBtn = document.getElementById('navCrmBtn');
+    // 2. Fetch catalog and initialize UI
+    await loadCatalog();
+    initNavigation();
+    initModals();
+    initTracker();
+  });
 
-    if (viewName === 'crm') {
-      if (publicViewEl) publicViewEl.classList.add('hidden');
-      if (crmViewEl) crmViewEl.classList.remove('hidden');
-
-      if (navCrmBtn) {
-        navCrmBtn.classList.add('bg-rose-600', 'text-white', 'shadow-sm');
-        navCrmBtn.classList.remove('text-slate-300', 'hover:text-white', 'hover:bg-slate-800');
+  async function loadCatalog() {
+    try {
+      const res = await fetch('/api/catalog');
+      if (res.ok) {
+        catalogData = await res.json();
+        renderCatalogGrid('all');
       }
-      if (navPublicBtn) {
-        navPublicBtn.classList.remove('bg-rose-600', 'text-white', 'shadow-sm');
-        navPublicBtn.classList.add('text-slate-300', 'hover:text-white', 'hover:bg-slate-800');
-      }
-
-      window.location.hash = 'crm';
-      if (window.PMG_CRM) window.PMG_CRM.refresh();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      if (crmViewEl) crmViewEl.classList.add('hidden');
-      if (publicViewEl) publicViewEl.classList.remove('hidden');
-
-      if (navPublicBtn) {
-        navPublicBtn.classList.add('bg-rose-600', 'text-white', 'shadow-sm');
-        navPublicBtn.classList.remove('text-slate-300', 'hover:text-white', 'hover:bg-slate-800');
-      }
-      if (navCrmBtn) {
-        navCrmBtn.classList.remove('bg-rose-600', 'text-white', 'shadow-sm');
-        navCrmBtn.classList.add('text-slate-300', 'hover:text-white', 'hover:bg-slate-800');
-      }
-
-      if (window.location.hash === '#crm') {
-        window.location.hash = '';
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (e) {
+      console.warn('Could not load remote catalog, using local DOM fallback');
     }
   }
 
-  // Render Catalog Grid with Filtering
-  function renderCatalog() {
-    const grid = document.getElementById('catalogGrid');
-    if (!grid || !window.PMG_DATA) return;
+  function renderCatalogGrid(filterCategory) {
+    const grid = document.getElementById('catalogGridContainer');
+    if (!grid || !catalogData || !catalogData.categories) return;
 
-    let items = window.PMG_DATA.catalog || [];
-    if (appState.catalogFilter !== 'all') {
-      items = items.filter(i => i.category === appState.catalogFilter);
+    let items = catalogData.categories;
+    if (filterCategory && filterCategory !== 'all') {
+      if (filterCategory === 'books') items = items.filter(c => ['books', 'magazines'].includes(c.id));
+      else if (filterCategory === 'labels') items = items.filter(c => ['flexo-labels', 'boxes'].includes(c.id));
+      else if (filterCategory === 'marketing') items = items.filter(c => ['booklets', 'flyers', 'calendars', 'roll-up', 'backlit'].includes(c.id));
+      else if (filterCategory === 'corporate') items = items.filter(c => ['business-cards', 'folders', 'stamps', 'blanks', 'souvenirs'].includes(c.id));
     }
 
-    grid.innerHTML = items.map(item => `
-      <div class="product-card bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col justify-between group">
+    renderCards(items);
+  }
+
+  function renderCards(items) {
+    const grid = document.getElementById('catalogGridContainer');
+    if (!grid) return;
+
+    grid.innerHTML = items.map(cat => `
+      <div class="pmg-card">
         <div>
-          <!-- Image -->
-          <div class="relative h-48 overflow-hidden bg-slate-100">
-            <img src="${item.img}" alt="${item.title}" class="product-img w-full h-full object-cover">
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-900/80 backdrop-blur-md text-white">
-              ${item.badge}
-            </span>
-            <span class="absolute bottom-3 right-3 px-2 py-0.5 rounded text-[10px] font-semibold bg-white/90 backdrop-blur-sm text-slate-800 shadow-sm">
-              ${item.leadTime}
-            </span>
+          <div class="pmg-card-img-wrap">
+            <span class="pmg-card-badge">${cat.badge}</span>
+            <img src="${cat.image}" alt="${cat.name}">
           </div>
-
-          <!-- Content -->
-          <div class="p-5">
-            <h3 class="text-base font-bold text-slate-900 group-hover:text-rose-600 transition">${item.title}</h3>
-            <p class="text-xs font-medium text-slate-500 mt-1">${item.subtitle}</p>
-            <p class="text-xs text-slate-600 mt-2.5 line-clamp-2 leading-relaxed">${item.desc}</p>
+          <h3 class="pmg-card-title">${cat.name}</h3>
+          <p class="pmg-card-desc">${cat.description}</p>
+          <div class="pmg-card-meta">
+            <span>⏱ ${cat.leadTime}</span>
+            <span>•</span>
+            <span>Мин: от ${cat.minQty} шт.</span>
           </div>
         </div>
-
-        <!-- Footer -->
-        <div class="p-5 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
-          <div>
-            <div class="text-[10px] uppercase font-semibold text-slate-400">Тираж ${item.minRun}</div>
-            <div class="text-sm font-black text-rose-600">от ${item.priceFrom.toLocaleString('ru-RU')} ₽</div>
-          </div>
-          <button type="button" class="catalog-calc-btn px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-rose-600 text-white text-xs font-bold transition shadow-sm" data-calc="${item.calcKey}">
-            Рассчитать ➔
-          </button>
-        </div>
-      </div>
-    `).join('');
-
-    // Bind "Рассчитать" clicks to switch calculator
-    document.querySelectorAll('.catalog-calc-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.dataset.calc;
-        if (window.PMG_CALCULATOR) {
-          window.PMG_CALCULATOR.selectProduct(key);
-        }
-        const calcSection = document.getElementById('calculatorSection');
-        if (calcSection) {
-          calcSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  }
-
-  // Render Services Showcase
-  function renderServices() {
-    const container = document.getElementById('servicesContainer');
-    if (!container || !window.PMG_DATA) return;
-
-    container.innerHTML = window.PMG_DATA.services.map((s, idx) => `
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-slate-300 transition">
-        <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 font-bold flex items-center justify-center text-sm mb-4">
-          0${idx + 1}
-        </div>
-        <h4 class="text-base font-bold text-slate-900">${s.title}</h4>
-        <div class="text-xs font-medium text-rose-600 mt-0.5">${s.subtitle}</div>
-        <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">${s.desc}</p>
-        <ul class="mt-4 space-y-1.5 border-t border-slate-100 pt-3">
-          ${s.features.map(f => `
-            <li class="flex items-center gap-2 text-xs text-slate-700">
-              <span class="text-emerald-500 font-bold">✓</span>
-              <span>${f}</span>
-            </li>
-          `).join('')}
-        </ul>
-      </div>
-    `).join('');
-  }
-
-  // Render Equipment Cards
-  function renderEquipmentShowcase() {
-    const container = document.getElementById('equipmentShowcase');
-    if (!container) return;
-
-    fetch('/api/equipment')
-      .then(res => res.json())
-      .then(eqList => {
-        container.innerHTML = eqList.map(eq => `
-          <div class="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 shadow-lg flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">${eq.origin}</span>
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${eq.status === 'running' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400'}">
-                  ${eq.status === 'running' ? '● В РАБОТЕ 24/7' : '○ ГОТОВ К ЗАПУСКУ'}
-                </span>
-              </div>
-              <h4 class="font-bold text-sm text-white mt-1">${eq.name}</h4>
-              <p class="text-xs text-slate-400 mt-0.5">${eq.type} • ${eq.speed}</p>
-            </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
-              <span class="text-slate-400 text-[11px]">Загрузка смены:</span>
-              <span class="font-bold text-rose-400">${eq.loadPercent}%</span>
-            </div>
-          </div>
-        `).join('');
-      })
-      .catch(err => console.error('Error fetching equipment showcase:', err));
-  }
-
-  // Render Reviews List
-  function renderReviews() {
-    const container = document.getElementById('reviewsContainer');
-    if (!container || !window.PMG_DATA) return;
-
-    container.innerHTML = window.PMG_DATA.reviews.map(r => `
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
         <div>
-          <div class="flex items-center gap-1 text-amber-400 text-xs mb-3">
-            ${'★'.repeat(r.rating)}
-            <span class="text-slate-400 text-[10px] ml-2 text-slate-500">${r.date}</span>
+          <div class="pmg-card-footer">
+            <div class="pmg-card-price-block">
+              <div class="label">Стоимость</div>
+              <div class="price">${cat.startingPrice}</div>
+            </div>
+            <button type="button" class="btn btn-sm btn-red" onclick="window.URAL_APP?.selectCategoryForCalc('${cat.id}')">
+              Рассчитать ➔
+            </button>
           </div>
-          <p class="text-xs text-slate-700 leading-relaxed italic">"${r.text}"</p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100">
-          <strong class="font-bold text-xs text-slate-900 block">${r.author}</strong>
-          <span class="text-[10px] text-slate-500">${r.company}</span>
         </div>
       </div>
     `).join('');
   }
 
-  // Router & URL Hash synchronization
-  function handleHashChange() {
-    const hash = window.location.hash;
-    if (hash === '#crm') {
-      setView('crm');
-    } else if (hash.startsWith('#track')) {
-      setView('public');
-      const trackSection = document.getElementById('trackingSection');
-      if (trackSection) {
-        trackSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      setView('public');
+  function handleSearch(query) {
+    if (!catalogData || !catalogData.categories) return;
+    const q = (query || '').toLowerCase().trim();
+    if (!q) {
+      renderCatalogGrid('all');
+      return;
     }
+    const matched = catalogData.categories.filter(c =>
+      c.name.toLowerCase().includes(q) ||
+      c.description.toLowerCase().includes(q) ||
+      c.specs.some(s => s.toLowerCase().includes(q))
+    );
+    renderCards(matched);
   }
 
-  // Initialize Application
-  document.addEventListener('DOMContentLoaded', () => {
-    // Navigation switcher buttons
-    document.getElementById('navPublicBtn')?.addEventListener('click', () => setView('public'));
-    document.getElementById('navCrmBtn')?.addEventListener('click', () => setView('crm'));
-
-    // Catalog category tabs
-    document.querySelectorAll('.catalog-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.catalog-tab').forEach(t => {
-          t.classList.remove('bg-rose-600', 'text-white', 'shadow-sm');
-          t.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100');
-        });
-        tab.classList.add('bg-rose-600', 'text-white', 'shadow-sm');
-        tab.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100');
-
-        appState.catalogFilter = tab.dataset.category;
-        renderCatalog();
-      });
+  function initNavigation() {
+    // Header shadow on scroll
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
     });
 
     // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    const mobileBtn = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('mainNavMenu');
+    mobileBtn?.addEventListener('click', () => {
+      navMenu?.classList.toggle('open');
+    });
 
-    // Modal Close click outside or on close buttons
-    document.querySelectorAll('.close-modal-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.modal-overlay')?.classList.add('hidden');
+    // Close mobile menu on click
+    navMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMenu?.classList.remove('open'));
+    });
+
+    // Catalog Filter Buttons
+    document.querySelectorAll('[data-catalog-filter]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('[data-catalog-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCatalogGrid(btn.dataset.catalogFilter);
+      });
+    });
+  }
+
+  function initModals() {
+    // Close modal on overlay click or close button
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('active');
+        }
       });
     });
 
-    // Submodules initialization
-    if (window.PMG_CALCULATOR) window.PMG_CALCULATOR.init();
-    if (window.PMG_TRACKER) window.PMG_TRACKER.init();
-    if (window.PMG_CRM) window.PMG_CRM.init();
+    document.querySelectorAll('.modal-close-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal-overlay')?.classList.remove('active');
+      });
+    });
 
-    renderCatalog();
-    renderServices();
-    renderEquipmentShowcase();
-    renderReviews();
+    // ESC key closes modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+      }
+    });
 
-    // Check initial hash
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-  });
+    // Order Form Submit
+    const orderForm = document.getElementById('orderModalForm');
+    orderForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = orderForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
 
-  window.PMG_APP = {
-    setView
+      const payload = {
+        name: window.URAL_SECURITY?.sanitize(document.getElementById('orderClientName').value),
+        phone: window.URAL_SECURITY?.sanitize(document.getElementById('orderClientPhone').value),
+        email: window.URAL_SECURITY?.sanitize(document.getElementById('orderClientEmail').value),
+        company: window.URAL_SECURITY?.sanitize(document.getElementById('orderClientCompany').value),
+        category: document.getElementById('orderCategoryHidden').value || 'Печать полиграфии',
+        specs: window.URAL_CALC?.getState() || {},
+        comment: window.URAL_SECURITY?.sanitize(document.getElementById('orderClientComment').value),
+        files: window.URAL_PREFLIGHT?.getUploadedFiles() || []
+      };
+
+      try {
+        const res = await fetch('/api/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          document.getElementById('orderModal')?.classList.remove('active');
+          showToast(`Заказ № ${data.orderId} успешно принят! Технолог свяжется с вами.`, 'success');
+          orderForm.reset();
+        } else {
+          showToast(data.error || 'Ошибка при отправке заказа', 'error');
+        }
+      } catch (err) {
+        showToast('Сервер временно недоступен. Пожалуйста, позвоните нам: +7 (3532) 66-22-11', 'error');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+
+    // Callback Form Submit
+    const callbackForm = document.getElementById('callbackModalForm');
+    callbackForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = callbackForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      const payload = {
+        name: window.URAL_SECURITY?.sanitize(document.getElementById('cbName').value),
+        phone: window.URAL_SECURITY?.sanitize(document.getElementById('cbPhone').value),
+        question: window.URAL_SECURITY?.sanitize(document.getElementById('cbQuestion').value)
+      };
+
+      try {
+        const res = await fetch('/api/callback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          document.getElementById('callbackModal')?.classList.remove('active');
+          showToast(data.message, 'success');
+          callbackForm.reset();
+        } else {
+          showToast(data.error || 'Ошибка при заказе звонка', 'error');
+        }
+      } catch (err) {
+        showToast('Сервер временно недоступен', 'error');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  function initTracker() {
+    const trackBtn = document.getElementById('trackerSearchBtn');
+    const trackInput = document.getElementById('trackerSearchInput');
+    const trackResult = document.getElementById('trackerResultBox');
+
+    trackBtn?.addEventListener('click', async () => {
+      const q = trackInput?.value.trim();
+      if (!q) {
+        showToast('Введите номер заказа (напр. ЮУ-2026-1048) или телефон', 'error');
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/orders/track/${encodeURIComponent(q)}`);
+        const data = await res.json();
+        if (res.ok && data.success) {
+          const ord = data.order;
+          trackResult.innerHTML = `
+            <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 8px; padding: 20px; margin-top: 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem; color: #15803D;">Заказ ${ord.id}</span>
+                <span style="background: #16A34A; color: #fff; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">${ord.status}</span>
+              </div>
+              <div style="font-size: 0.9rem; color: #374151;">Заказчик: <strong>${ord.clientName}</strong> | Тип: <strong>${ord.category}</strong></div>
+              <div style="font-size: 0.825rem; color: #4B5563; margin-top: 6px;">Ответственный: <strong>${ord.assignedManager}</strong></div>
+              <div style="font-size: 0.8rem; color: #6B7280; margin-top: 4px; font-family: var(--font-mono);">Принят в работу: ${new Date(ord.createdAt).toLocaleString('ru-RU')}</div>
+            </div>
+          `;
+        } else {
+          trackResult.innerHTML = `
+            <div style="background: #FEF2F2; border: 1.5px solid #FCA5A5; border-radius: 8px; padding: 16px; margin-top: 18px; color: #991B1B;">
+              ${data.error || 'Заказ не найден. Проверьте правильность введенного номера.'}
+            </div>
+          `;
+        }
+      } catch (e) {
+        showToast('Ошибка связи с сервером', 'error');
+      }
+    });
+  }
+
+  function showToast(message, type = 'success') {
+    let container = document.getElementById('toastContainer');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toastContainer';
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `<span>${type === 'success' ? '✓' : '⚠️'}</span> <div>${message}</div>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(100%)';
+      toast.style.transition = 'all 0.3s ease';
+      setTimeout(() => toast.remove(), 300);
+    }, 4500);
+  }
+
+  window.URAL_APP = {
+    showToast,
+    handleSearch,
+    openOrderModal(params = {}) {
+      const modal = document.getElementById('orderModal');
+      if (!modal) return;
+
+      if (params.category) {
+        const catHidden = document.getElementById('orderCategoryHidden');
+        const catTitle = document.getElementById('orderModalCategoryTitle');
+        if (catHidden) catHidden.value = params.category;
+        if (catTitle) catTitle.innerText = `Заявка: ${params.category}`;
+      }
+      modal.classList.add('active');
+    },
+    openCallbackModal() {
+      document.getElementById('callbackModal')?.classList.add('active');
+    },
+    selectCategoryForCalc(catId) {
+      if (window.URAL_CALC) {
+        window.URAL_CALC.setCategory(catId);
+        const section = document.getElementById('calculator-section');
+        section?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 })();

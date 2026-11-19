@@ -7,14 +7,14 @@
 
     if (!q) {
       if (statusMsg) {
-        statusMsg.innerText = 'Пожалуйста, укажите номер заказа (например: PMG-1048) или телефон.';
+        statusMsg.innerText = 'Пожалуйста, укажите номер заказа (например: ЮУ-1048) или телефон.';
         statusMsg.className = 'text-sm text-rose-600 mt-2 block';
       }
       return;
     }
 
     if (statusMsg) {
-      statusMsg.innerText = 'Поиск заказа в производственной базе PMG...';
+      statusMsg.innerText = 'Поиск заказа в производственной базе ИПК «Южный Урал»...';
       statusMsg.className = 'text-sm text-slate-500 mt-2 block';
     }
 
@@ -73,7 +73,7 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
           <div>
             <div class="flex items-center gap-3">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Заказ типографии PMG</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Заказ ИПК «Южный Урал»</span>
               ${urgencyBadge}
             </div>
             <h3 class="text-2xl font-black text-slate-900 mt-1 flex items-center gap-2">
@@ -143,13 +143,13 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               ${deadlineFormatted}
             </div>
-            <div class="text-xs text-slate-500 mt-0.5">Адрес выдачи: Москва, Ленинградский пр-т 80 к30</div>
+            <div class="text-xs text-slate-500 mt-0.5">Адрес выдачи: 460000, г. Оренбург, пер. Свободина, 4, корп. 3</div>
           </div>
 
           <div class="bg-white p-4 rounded-xl border border-slate-200/80 flex flex-col justify-between">
             <div>
               <div class="text-[11px] uppercase font-bold text-slate-400">Связь с производством</div>
-              <div class="text-xs text-slate-700 mt-1">Отдел координации тиражей: <strong>+7 (495) 023-25-51</strong></div>
+              <div class="text-xs text-slate-700 mt-1">Отдел координации тиражей: <strong>+7 (3532) 66-22-11</strong></div>
             </div>
             <div class="mt-2 flex gap-2">
               <button onclick="window.location.hash='crm'; window.PMG_CRM?.openOrderModal('${order.orderId}')" class="text-xs bg-slate-900 hover:bg-slate-800 text-white font-medium py-1.5 px-3 rounded-lg transition inline-flex items-center gap-1">
