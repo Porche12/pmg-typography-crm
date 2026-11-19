@@ -25,20 +25,20 @@
   }
 
   // Intercept window.fetch for /api/* on GitHub Pages or static host
-  const originalFetch = window.fetch;
-  window.fetch = async function(url, options = {}) {
+  const originalFetch = (typeof window !== 'undefined' && window.fetch) ? window.fetch.bind(window) : (typeof fetch !== 'undefined' ? fetch : null);
+  const interceptedFetch = async function(url, options = {}) {
     const urlStr = typeof url === 'string' ? url : (url.url || '');
     
     // If not an /api/ request, use normal fetch
     if (!urlStr.includes('/api/')) {
-      return originalFetch(url, options);
+      return originalFetch ? originalFetch(url, options) : Promise.reject(new Error('Fetch not available'));
     }
 
     // If on localhost / Express server, attempt normal fetch first
-    if (!isStaticHost) {
+    if (!isStaticHost && originalFetch) {
       try {
         const response = await originalFetch(url, options);
-        if (response.ok) return response;
+        if (response && response.ok) return response;
       } catch (err) {
         console.warn('Backend fetch failed, falling back to LocalStorage simulation:', err);
       }
@@ -47,6 +47,13 @@
     // Static / GitHub Pages Simulated API Engine
     return handleSimulatedAPI(urlStr, options);
   };
+
+  if (typeof window !== 'undefined') {
+    window.fetch = interceptedFetch;
+  }
+  if (typeof globalThis !== 'undefined') {
+    globalThis.fetch = interceptedFetch;
+  }
 
   function handleSimulatedAPI(url, options) {
     const db = getLocalDB();
@@ -307,10 +314,22 @@
     }
 
     // Return fake Response object
-    return new Response(JSON.stringify(responseData), {
+    if (typeof Response !== 'undefined') {
+      try {
+        return new Response(JSON.stringify(responseData), {
+          status,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      } catch (e) {
+        // Fallback if Response constructor fails in environment
+      }
+    }
+    return {
+      ok: status >= 200 && status < 300,
       status,
-      headers: { 'Content-Type': 'application/json' }
-    });
+      json: async () => responseData,
+      text: async () => JSON.stringify(responseData)
+    };
   }
 
   window.PMG_STORAGE = {

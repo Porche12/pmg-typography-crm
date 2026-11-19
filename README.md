@@ -9,16 +9,17 @@
 ## 🌐 Демонстрация онлайн (GitHub Pages)
 
 Проект опубликован и работает онлайн без необходимости локального развертывания:
-* **Публичный сайт типографии:** [https://porche12.github.io/pmg-typography-crm/](https://porche12.github.io/pmg-typography-crm/)
-* **Интегрированная CRM-система:** [https://porche12.github.io/pmg-typography-crm/#crm](https://porche12.github.io/pmg-typography-crm/#crm)
-* **Отслеживание заказа по номеру:** [https://porche12.github.io/pmg-typography-crm/#track](https://porche12.github.io/pmg-typography-crm/#track)
+* **Официальный сайт типографии:** [https://porche12.github.io/pmg-typography-crm/](https://porche12.github.io/pmg-typography-crm/)
+* **Интегрированная CRM-система:** Открывается в 1 клик по кнопке **«📊 CRM Производства»** в шапке сайта
+* **Онлайн-калькулятор и загрузка макетов:** Доступен на главной странице или по кнопке **«🖩 Калькулятор заказа»**
+* **Отслеживание заказа онлайн:** [https://porche12.github.io/pmg-typography-crm/#tracking-order](https://porche12.github.io/pmg-typography-crm/#tracking-order)
 
 Проект расположен в:
 ```
 C:\Users\pules\.gemini\antigravity\scratch\typography-crm
 ```
 
-### Запуск сервера:
+### Запуск локального сервера (при необходимости):
 ```bash
 cd C:\Users\pules\.gemini\antigravity\scratch\typography-crm
 node server.js
@@ -26,8 +27,8 @@ node server.js
 
 Сервер запустится на **`http://localhost:3000`**:
 - **Публичный сайт типографии:** [http://localhost:3000](http://localhost:3000)
-- **CRM-система управления:** [http://localhost:3000/#crm](http://localhost:3000/#crm)
-- **Отслеживание заказа онлайн:** [http://localhost:3000/#track](http://localhost:3000/#track)
+- **CRM-панель производства:** кнопка «📊 CRM Производства» в шапке
+- **Отслеживание заказа:** [http://localhost:3000/#tracking-order](http://localhost:3000/#tracking-order)
 
 ---
 
