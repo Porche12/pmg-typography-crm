@@ -1,0 +1,71 @@
+@font-face {
+  font-display: swap;
+}
+.nocopy {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.swiper__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.footer__logo.footer__logo_new iframe{
+    margin-top: 20px;
+}
+.portfolio-modal .swiper--main {
+    height: auto;
+}
+.portfolio-modal .modal-dialog {
+    max-width: 1000px;
+}
+.portfolio-modal img {
+    width: 100%;
+}
+.loupe {
+    cursor: 
+    url('/assets/images/icon/magnifying-glass.png') 4 1,
+    zoom-in;
+}
+
+.production__item:nth-child(3n):hover .portfolio_absolute_img {
+    justify-content: flex-end;
+}
+.swiper--videoreview {
+    padding-bottom: 31px;
+}
+.swiper--videoreview .swiper-pagination {
+    bottom: 1px;
+    text-align: center;
+}
+.video-review {
+    padding: 20px;
+    /*margin-bottom: 16px;
+    border-radius: 12px;
+    background-color: var(--lightgray);
+    transition: all .2s linear;*/
+}
+.video-review iframe {
+    width: 100%;
+    height: 200px;
+}
+@media (min-width: 992px) {
+    .swiper--videoreview {
+        padding-bottom: 0;
+    }
+    .swiper--videoreview .swiper-pagination {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .footer__logo.footer__logo_new{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

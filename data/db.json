@@ -20,8 +20,8 @@
       "category": "Новый клиент с сайта",
       "tier": "Базовый 0%",
       "discount": 0,
-      "totalOrders": 1,
-      "totalSpent": 16500,
+      "totalOrders": 2,
+      "totalSpent": 33000,
       "notes": "Заказ создан через онлайн-калькулятор"
     },
     {
@@ -323,6 +323,57 @@
     }
   ],
   "orders": [
+    {
+      "id": "PMG-1055",
+      "title": "Визитки Touche Cover с золотым тиснением (Автотест)",
+      "category": "визитки",
+      "categoryName": "Визитки",
+      "client": {
+        "name": "ООО «Автотест Холдинг»",
+        "contactPerson": "Алексей Тестов",
+        "phone": "+7 (999) 777-66-55",
+        "email": "test@autotest.ru",
+        "id": "cl-5274",
+        "tier": "Базовый 0%"
+      },
+      "specs": {
+        "format": "90х50 мм",
+        "paper": "Touche Cover Черный 301г",
+        "quantity": 500,
+        "colorSides": "4+0",
+        "finishing": [
+          "Тиснение фольгой Kurz",
+          "Скругление 4-х углов"
+        ],
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 16500,
+        "perUnit": "33.0",
+        "primeCost": 6500,
+        "margin": 10000,
+        "paid": false
+      },
+      "stage": "printing",
+      "manager": "Дежурный менеджер",
+      "machine": "HP Indigo 7900 Digital Press",
+      "preflightStatus": "checking",
+      "files": [],
+      "notes": [
+        {
+          "author": "Система CRM",
+          "text": "Статус изменен: Новая заявка ➔ В производстве (Печать)",
+          "date": "19.11.2026, 16:45:08"
+        },
+        {
+          "author": "Мастер цеха",
+          "text": "Печать выполнена на HP Indigo, тираж передан на тиснение.",
+          "date": "19.11.2026, 16:45:08"
+        }
+      ],
+      "createdAt": "2026-11-19T13:45:08.324Z",
+      "updatedAt": "2026-11-19T13:45:08.328Z"
+    },
     {
       "id": "PMG-1054",
       "title": "Визитки Touche Cover с золотым тиснением (Автотест)",
