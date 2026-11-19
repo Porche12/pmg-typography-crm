@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Типография PMG в Москве — качественная печать полиграфии на заказ и CRM-система производства</title>
+  <meta name="description" content="Типография полного цикла PMG в Москве: цифровая, офсетная, широкоформатная и УФ-печать. Онлайн-калькулятор стоимости, отслеживание заказов и встроенная CRM-система.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pmg: {
+              navy: '#0f172a',
+              slate: '#1e293b',
+              red: '#e11d48',
+              redHover: '#be123c',
+              light: '#f8fafc'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Top Info Strip -->
+  <div class="bg-slate-950 text-slate-400 text-[11px] py-1.5 px-4 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-4 flex-wrap">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-slate-300 font-medium">Производство 24/7 в Москве</span>
+        </span>
+        <span class="hidden md:inline text-slate-600">•</span>
+        <span class="hidden md:inline">м. Сокол, Ленинградский проспект, д. 80, к. 30</span>
+      </div>
+      <div class="flex items-center gap-4 flex-wrap">
+        <a href="tel:+74950232551" class="text-slate-200 hover:text-rose-400 font-bold transition">☎ +7 (495) 023-25-51</a>
+        <span class="text-slate-600">•</span>
+        <a href="mailto:zakaz@pmg.ru" class="text-slate-300 hover:text-white transition">zakaz@pmg.ru</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Glass Header -->
+  <header class="glass-header sticky top-0 z-40 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="./" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-600 to-rose-700 flex items-center justify-center font-black text-white text-lg tracking-wider shadow-md group-hover:scale-105 transition">
+          PMG
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-black text-lg tracking-tight text-white">ТИПОГРАФИЯ PMG</span>
+            <div class="cmyk-dots">
+              <span class="cmyk-dot cyan" title="Cyan"></span>
+              <span class="cmyk-dot magenta" title="Magenta"></span>
+              <span class="cmyk-dot yellow" title="Yellow"></span>
+              <span class="cmyk-dot black" title="Key Black"></span>
+            </div>
+          </div>
+          <p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Полиграфический комплекс полного цикла</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
+        <a href="#catalogSection" class="hover:text-rose-400 transition">Каталог</a>
+        <a href="#servicesSection" class="hover:text-rose-400 transition">Услуги</a>
+        <a href="#calculatorSection" class="hover:text-rose-400 transition text-rose-300 font-bold">Калькулятор</a>
+        <a href="#equipmentSection" class="hover:text-rose-400 transition">Оборудование</a>
+        <a href="#reviewsSection" class="hover:text-rose-400 transition">Отзывы</a>
+        <a href="#contactsSection" class="hover:text-rose-400 transition">Контакты</a>
+      </nav>
+
+      <!-- View Switcher & Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Switcher Mode Capsule -->
+        <div class="flex bg-slate-900/90 p-1 rounded-xl border border-slate-700/80 shadow-inner">
+          <button type="button" id="navPublicBtn" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-rose-600 text-white shadow-sm">
+            <span>🌐</span>
+            <span>Сайт</span>
+          </button>
+          <button type="button" id="navCrmBtn" class="px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800">
+            <span>📊</span>
+            <span>Панель CRM</span>
+            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+          </button>
+        </div>
+
+        <!-- Quick Track Button -->
+        <a href="#trackingSection" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-700 hover:border-slate-500 text-slate-200 text-xs font-bold transition hover:bg-slate-800/80">
+          <span>🔍</span>
+          <span>Отследить заказ</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-4 py-3 space-y-2 text-sm font-medium">
+      <a href="#catalogSection" class="block py-1.5 text-slate-200 hover:text-rose-400">Каталог продукции</a>
+      <a href="#calculatorSection" class="block py-1.5 text-rose-400 font-bold">Онлайн-калькулятор</a>
+      <a href="#servicesSection" class="block py-1.5 text-slate-200 hover:text-rose-400">Услуги и технологии</a>
+      <a href="#equipmentSection" class="block py-1.5 text-slate-200 hover:text-rose-400">Оборудование цеха</a>
+      <a href="#trackingSection" class="block py-1.5 text-slate-200 hover:text-rose-400">Отслеживание заказа</a>
+      <a href="#contactsSection" class="block py-1.5 text-slate-200 hover:text-rose-400">Контакты и адрес</a>
+    </div>
+  </header>
+
+  <!-- ================= VIEW 1: PUBLIC STOREFRONT WEBSITE ================= -->
+  <div id="publicView" class="flex-1">
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-16 sm:py-24 overflow-hidden border-b border-slate-800">
+      <!-- Glow Gradients -->
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-rose-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20 mb-6">
+            <span>⚡ Цифровая и офсетная печать в Москве</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+            Типография полного цикла <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-amber-300">PMG</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-xl text-slate-300 leading-relaxed font-normal">
+            Срочная печать полиграфии любой сложности от 1 часа: визитки, листовки, стикеры, каталоги, упаковка и сувенирная продукция на немецком и японском оборудовании.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#calculatorSection" class="px-6 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-rose-600/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+              <span>Рассчитать стоимость онлайн</span> ➔
+            </a>
+            <a href="#trackingSection" class="px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-sm sm:text-base border border-slate-700 transition flex items-center gap-2">
+              <span>🔍 Проверить статус заказа</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="mt-12 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-white">18+ лет</div>
+              <div class="text-xs text-slate-400 font-medium mt-0.5">Безупречной работы с 2006 г.</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-rose-400">40+ станков</div>
+              <div class="text-xs text-slate-400 font-medium mt-0.5">Heidelberg, HP Indigo, Zünd</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-white">24/7</div>
+              <div class="text-xs text-slate-400 font-medium mt-0.5">Круглосуточный цех печати</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
+              <div class="text-xs text-slate-400 font-medium mt-0.5">Гарантия точного цвета по ISO</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALCULATOR SECTION ================= -->
+    <section id="calculatorSection" class="py-16 bg-slate-100/70 border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+            Интерактивный расчет тиража
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Онлайн-калькулятор полиграфии</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2">
+            Выберите продукт, задайте параметры тиража и отделки. Цена рассчитывается моментально с учетом объема и скидок.
+          </p>
+        </div>
+
+        <!-- Product Category Selectors Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-rose-600 text-white shadow-md" data-product="vizitki">
+            <span>📇</span>
+            <span>Визитки</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="listovki">
+            <span>📄</span>
+            <span>Листовки и флаеры</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="buklety">
+            <span>📖</span>
+            <span>Буклеты</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="stikery">
+            <span>🏷️</span>
+            <span>Наклейки и стикеры</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="katalogi">
+            <span>📚</span>
+            <span>Каталоги и брошюры</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="upakovka">
+            <span>📦</span>
+            <span>Коробки и упаковка</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="pakety">
+            <span>🛍️</span>
+            <span>Пакеты</span>
+          </button>
+          <button type="button" class="calc-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100" data-product="kalendari">
+            <span>📅</span>
+            <span>Календари</span>
+          </button>
+        </div>
+
+        <!-- Calculator Main Grid: Options on Left, Live Summary & Order Form on Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Column: Dynamic Product Options (7 cols) -->
+          <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm">
+            <h3 class="text-lg font-black text-slate-900 pb-4 border-b border-slate-100 mb-6 flex items-center justify-between">
+              <span>Параметры печати и отделки</span>
+              <span class="text-xs font-semibold text-rose-600 bg-rose-50 px-2.5 py-1 rounded-md">Автоматический расчет</span>
+            </h3>
+            
+            <div id="calcDynamicOptions">
+              <!-- Rendered by calculator.js -->
+            </div>
+          </div>
+
+          <!-- Right Column: Sticky Summary & Fast Order Form (5 cols) -->
+          <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+            
+            <!-- Summary Box -->
+            <div class="bg-slate-900 text-white p-6 sm:p-7 rounded-2xl border border-slate-800 shadow-xl">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div>
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">Итоговая стоимость</span>
+                  <div class="text-3xl font-black text-white mt-0.5" id="calcTotalSum">0 ₽</div>
+                </div>
+                <div class="text-right">
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-slate-400">За штуку</span>
+                  <div class="text-base font-bold text-rose-400" id="calcPerUnit">0 ₽/шт.</div>
+                </div>
+              </div>
+
+              <!-- Ready deadline badge -->
+              <div class="mt-4 flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-slate-800/80 border border-slate-700/50">
+                <span class="text-slate-300">Срок изготовления:</span>
+                <span class="font-bold text-amber-300 flex items-center gap-1" id="calcLeadTime">1-2 рабочих дня</span>
+              </div>
+
+              <!-- Specs breakdown -->
+              <div class="mt-4 pt-4 border-t border-slate-800" id="calcSpecSummary">
+                <!-- Dynamically updated -->
+              </div>
+            </div>
+
+            <!-- Preflight File Dropzone & Order Submission Form -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <h4 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+                <span>📎 Прикрепить макет к заказу</span>
+              </h4>
+
+              <!-- Drag and drop zone -->
+              <div id="calcDropzone" class="border-2 border-dashed border-slate-300 hover:border-rose-500 rounded-xl p-4 text-center cursor-pointer transition bg-slate-50 hover:bg-rose-50/40">
+                <div class="text-2xl mb-1">📤</div>
+                <div class="text-xs font-bold text-slate-700">Перетащите макет сюда или нажмите для выбора</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">PDF, AI, PSD, CDR, TIFF (автопроверка CMYK / 300 DPI)</div>
+                <input type="file" id="calcFileInput" class="hidden" accept=".pdf,.ai,.cdr,.psd,.tiff,.tif,.png,.jpg,.jpeg">
+              </div>
+
+              <div id="calcFileList" class="mt-2 space-y-1.5"></div>
+
+              <!-- Contact Form -->
+              <form id="calcOrderForm" class="mt-5 space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Ваше имя *</label>
+                    <input type="text" id="clientName" placeholder="Иван Иванов" required class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Телефон *</label>
+                    <input type="tel" id="clientPhone" placeholder="+7 (999) 000-00-00" required class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-500 font-medium">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Email</label>
+                    <input type="email" id="clientEmail" placeholder="client@company.ru" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                  </div>
+                  <div>
+                    <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Компания / ИНН</label>
+                    <input type="text" id="clientCompany" placeholder="ООО или ИП (для счёта)" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Комментарий / пожелания</label>
+                  <input type="text" id="clientComment" placeholder="Цвет фольги, доставка курьером..." class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                </div>
+
+                <button type="submit" id="calcSubmitBtn" class="w-full mt-2 py-3.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-sm shadow-md shadow-rose-600/30 transition transform hover:-translate-y-0.5">
+                  Оформить заказ в типографию ➔
+                </button>
+                <p class="text-[10px] text-center text-slate-400 mt-2">
+                  Заказ автоматически регистрируется в CRM-системе типографии. Вы сразу получите номер для отслеживания.
+                </p>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CATALOG SECTION ================= -->
+    <section id="catalogSection" class="py-16 bg-white border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+              Продукция PMG
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Каталог полиграфической продукции</h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">
+              Более 300 видов печатных изделий с гарантией соблюдения сроков и контроля качества.
+            </p>
+          </div>
+
+          <!-- Catalog Filter Tabs -->
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow-sm" data-category="all">Все</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="наклейки">Наклейки</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="визитки">Визитки</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="листовая">Листовки</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="многостраничная">Каталоги</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="упаковка">Упаковка</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="пакеты">Пакеты</button>
+            <button type="button" class="catalog-tab px-3 py-1.5 rounded-lg text-xs font-bold transition bg-white text-slate-700 hover:bg-slate-100" data-category="календари">Календари</button>
+          </div>
+        </div>
+
+        <!-- Catalog Dynamic Grid -->
+        <div id="catalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Rendered by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SERVICES & TECHNOLOGIES ================= -->
+    <section id="servicesSection" class="py-16 bg-slate-50 border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+            Технологии печати
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Услуги типографии PMG</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2">
+            Собственный технологический парк позволяет выполнять заказы любого формата и сложности без посредников.
+          </p>
+        </div>
+
+        <div id="servicesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Rendered by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EQUIPMENT PARK ================= -->
+    <section id="equipmentSection" class="py-16 bg-slate-950 text-white border-b border-slate-800 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-950/60 px-3 py-1 rounded-full border border-rose-800/60">
+              Производственная база
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">Парк промышленного оборудования</h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+              Передовые печатные машины Heidelberg (Германия), HP Indigo (Израиль), Xerox (США) и Zünd (Швейцария).
+            </p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-emerald-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              Мониторинг смены в реальном времени
+            </span>
+          </div>
+        </div>
+
+        <div id="equipmentShowcase" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ORDER TRACKING WIDGET ================= -->
+    <section id="trackingSection" class="py-16 bg-gradient-to-b from-slate-100 to-white border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+            Прозрачное производство
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Где находится мой тираж?</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            Введите номер вашего заказа (например: <strong>PMG-1048</strong>) или номер телефона, указанный при оформлении.
+          </p>
+        </div>
+
+        <!-- Search Input Bar -->
+        <div class="max-w-xl mx-auto bg-white p-2 rounded-2xl border border-slate-300 shadow-md flex items-center gap-2">
+          <span class="pl-3 text-slate-400 text-base">🔍</span>
+          <input type="text" id="trackQueryInput" placeholder="Номер заказа (PMG-1048) или телефон" class="flex-1 py-2 text-sm focus:outline-none font-medium text-slate-800">
+          <button type="button" id="trackSubmitBtn" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-rose-600 text-white font-bold text-xs sm:text-sm transition shadow-sm">
+            Найти заказ
+          </button>
+        </div>
+
+        <div id="trackStatusMsg" class="hidden text-center mt-3"></div>
+
+        <!-- Result Box Container -->
+        <div id="trackResultBox" class="mt-8 hidden">
+          <!-- Rendered by tracker.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS SECTION ================= -->
+    <section id="reviewsSection" class="py-16 bg-white border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+            Репутация
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Отзывы клиентов о работе с PMG</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            Нам доверяют федеральные ритейлеры, ресторанные сети, косметические бренды и рекламные агентства.
+          </p>
+        </div>
+
+        <div id="reviewsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Rendered by app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FAQ & CONTACTS ================= -->
+    <section id="contactsSection" class="py-16 bg-slate-50 border-b border-slate-200 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- FAQ on Left (6 cols) -->
+          <div class="lg:col-span-6 space-y-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+                Вопросы и ответы
+              </span>
+              <h3 class="text-2xl font-black text-slate-900 mt-2">Часто задаваемые вопросы</h3>
+            </div>
+
+            <div class="space-y-3 mt-4">
+              <details class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm group">
+                <summary class="font-bold text-sm text-slate-800 cursor-pointer list-none flex justify-between items-center">
+                  <span>Как правильно подготовить макет к печати?</span>
+                  <span class="text-rose-600 group-open:rotate-180 transition">▼</span>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Мы принимаем макеты в форматах PDF/X-1a, AI, CDR и PSD. Цветовая модель должна быть CMYK (профиль Coated FOGRA39 или ISO Coated v2). Разрешение растровых элементов от 300 DPI. Обязательны вылеты под обрез по 2 мм с каждой стороны, а важные текстовые элементы должны отступать внутрь от линии реза не менее чем на 3-4 мм.
+                </p>
+              </details>
+
+              <details class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm group">
+                <summary class="font-bold text-sm text-slate-800 cursor-pointer list-none flex justify-between items-center">
+                  <span>Как быстро печатается срочный тираж?</span>
+                  <span class="text-rose-600 group-open:rotate-180 transition">▼</span>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  При выборе опции «⚡ Срочно» цифровая печать визиток, наклеек и листовок может быть выполнена за 1-3 часа прямо в день обращения. Наше производство работает 24/7 без выходных.
+                </p>
+              </details>
+
+              <details class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm group">
+                <summary class="font-bold text-sm text-slate-800 cursor-pointer list-none flex justify-between items-center">
+                  <span>Делаете ли вы цветопробу перед печатью?</span>
+                  <span class="text-rose-600 group-open:rotate-180 transition">▼</span>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Да, для ответственных тиражей (каталоги, упаковка, презентации) мы изготавливаем калиброванную цифровую цветопробу на сертифицированном плоттере Epson с имитацией печатного оттиска и шкалой Ugra/Fogra.
+                </p>
+              </details>
+
+              <details class="bg-white p-4 rounded-xl border border-slate-200/90 shadow-sm group">
+                <summary class="font-bold text-sm text-slate-800 cursor-pointer list-none flex justify-between items-center">
+                  <span>Как осуществляется доставка готовых заказов?</span>
+                  <span class="text-rose-600 group-open:rotate-180 transition">▼</span>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Доступен бесплатный самовывоз с нашего производства у м. Сокол (Москва, Ленинградский проспект 80 к30). Также работает собственная курьерская служба по Москве и МО, а доставка по всей России осуществляется ТК СДЭК и Деловые Линии.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Contacts Card on Right (6 cols) -->
+          <div class="lg:col-span-6 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-950/60 px-3 py-1 rounded-full border border-rose-800/60">
+                Контакты и производство
+              </span>
+              <h3 class="text-2xl font-black text-white mt-2">Типография PMG в Москве</h3>
+              <p class="text-xs text-slate-400 mt-1">Офис продаж и круглосуточный печатный цех</p>
+
+              <div class="mt-6 space-y-4 text-xs">
+                <div class="flex items-start gap-3">
+                  <span class="text-base text-rose-500">📍</span>
+                  <div>
+                    <strong class="text-white text-sm block">Адрес производства и офиса:</strong>
+                    <span class="text-slate-300">125315, г. Москва, Ленинградский проспект, дом 80, корпус 30 (м. Сокол)</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="text-base text-rose-500">📞</span>
+                  <div>
+                    <strong class="text-white text-sm block">Телефон отдела продаж:</strong>
+                    <a href="tel:+74950232551" class="text-rose-400 hover:text-rose-300 font-bold text-base transition">+7 (495) 023-25-51</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="text-base text-rose-500">✉️</span>
+                  <div>
+                    <strong class="text-white text-sm block">Электронная почта для макетов:</strong>
+                    <a href="mailto:zakaz@pmg.ru" class="text-slate-300 hover:text-white transition">zakaz@pmg.ru</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="text-base text-rose-500">🕒</span>
+                  <div>
+                    <strong class="text-white text-sm block">График работы:</strong>
+                    <span class="text-slate-300">Производственный цех: <strong>24/7 (Круглосуточно)</strong><br>Менеджеры клиентского отдела: Пн–Пт с 9:00 до 20:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+              <div class="text-xs text-slate-400">
+                ИНН 7714902341 • ОГРН 1147746892015
+              </div>
+              <button onclick="window.PMG_APP.setView('crm')" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-md">
+                <span>Панель CRM</span> ➔
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= VIEW 2: FULL TYPOGRAPHY CRM SYSTEM ================= -->
+  <div id="crmView" class="hidden flex-1 bg-slate-100 flex flex-col">
+    
+    <!-- CRM Top Bar -->
+    <div class="bg-slate-900 text-white px-4 sm:px-8 py-3.5 border-b border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 sticky top-14 z-30 shadow-md">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-rose-500 animate-pulse"></span>
+        <div>
+          <h2 class="text-sm font-black text-white flex items-center gap-2">
+            <span>PMG ПРОИЗВОДСТВО & CRM</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-950 text-rose-400 border border-rose-800/60">Цех 24/7</span>
+          </h2>
+          <p class="text-[10px] text-slate-400">Система оперативного управления заказами, препрессом и загрузкой оборудования</p>
+        </div>
+      </div>
+
+      <!-- Quick KPI Counters -->
+      <div class="flex items-center gap-3 sm:gap-6 text-xs flex-wrap">
+        <div>
+          <span class="text-slate-400 text-[10px] block font-semibold uppercase">В производстве</span>
+          <span class="font-black text-white text-sm" id="crmKpiActive">0</span>
+        </div>
+        <div>
+          <span class="text-slate-400 text-[10px] block font-semibold uppercase">Выручка</span>
+          <span class="font-black text-emerald-400 text-sm" id="crmKpiRevenue">0 ₽</span>
+        </div>
+        <div>
+          <span class="text-slate-400 text-[10px] block font-semibold uppercase">Срочные тиражи</span>
+          <span class="font-black text-rose-400 text-sm" id="crmKpiUrgent">0</span>
+        </div>
+        <div>
+          <span class="text-slate-400 text-[10px] block font-semibold uppercase">Мало бумаги</span>
+          <span class="font-black text-amber-400 text-sm" id="crmKpiLowMat">0</span>
+        </div>
+        <button onclick="window.PMG_APP.setView('public')" class="ml-2 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-1">
+          <span>На сайт</span> ➔
+        </button>
+      </div>
+    </div>
+
+    <!-- CRM Navigation Tabs Strip -->
+    <div class="bg-slate-950 px-4 sm:px-8 py-2 border-b border-slate-800 overflow-x-auto">
+      <div class="flex items-center gap-1 min-w-max">
+        <button type="button" class="crm-nav-tab px-3.5 py-1.5 rounded-lg text-xs font-bold transition bg-rose-600 text-white shadow-sm flex items-center gap-1.5" data-tab="kanban">
+          <span>📋</span>
+          <span>Воронка заказов (Канбан)</span>
+        </button>
+        <button type="button" class="crm-nav-tab px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200 hover:bg-slate-800 flex items-center gap-1.5" data-tab="clients">
+          <span>👥</span>
+          <span>База клиентов и контрагентов</span>
+        </button>
+        <button type="button" class="crm-nav-tab px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200 hover:bg-slate-800 flex items-center gap-1.5" data-tab="equipment">
+          <span>🏭</span>
+          <span>Загрузка оборудования цеха</span>
+        </button>
+        <button type="button" class="crm-nav-tab px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200 hover:bg-slate-800 flex items-center gap-1.5" data-tab="materials">
+          <span>📦</span>
+          <span>Склад бумаги и материалов</span>
+        </button>
+        <button type="button" class="crm-nav-tab px-3.5 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-slate-200 hover:bg-slate-800 flex items-center gap-1.5" data-tab="analytics">
+          <span>📈</span>
+          <span>Аналитика и отчеты</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- CRM Active Tab Dynamic Content Container -->
+    <div class="flex-1 p-4 sm:p-6 max-w-full overflow-hidden" id="crmTabContent">
+      <!-- Rendered by crm.js -->
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="font-black text-white text-base tracking-tight">ТИПОГРАФИЯ PMG</span>
+        <span class="text-slate-600">|</span>
+        <span>Официальный портал типографии полного цикла и CRM-платформа</span>
+      </div>
+      <div class="text-center sm:text-right text-[11px] text-slate-500">
+        © 2006–2026 Типография PMG. Все права защищены. Москва, Ленинградский пр-т, 80 к.30.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS ================= -->
+
+  <!-- 1. Order Success Modal -->
+  <div id="orderSuccessModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="modal-content bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+      <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-4">
+        ✓
+      </div>
+      <h3 class="text-xl font-black text-slate-900 text-center">Заказ успешно зарегистрирован!</h3>
+      <p class="text-xs text-slate-500 text-center mt-1">
+        Номер заказа присвоен и отправлен в CRM-систему типографии PMG.
+      </p>
+
+      <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
+        <div class="flex justify-between">
+          <span class="text-slate-500">Номер заказа:</span>
+          <strong class="font-black text-rose-600 text-sm" id="successOrderId">PMG-1048</strong>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Продукция:</span>
+          <strong class="text-slate-800 text-right truncate max-w-[200px]" id="successOrderTitle">Визитки</strong>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Сумма заказа:</span>
+          <strong class="font-bold text-slate-900" id="successOrderSum">0 ₽</strong>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Контактный телефон:</span>
+          <span class="text-slate-700" id="successOrderPhone">+7 (999) 000-00-00</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col gap-2">
+        <button type="button" id="successTrackBtn" class="w-full py-2.5 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs transition">
+          🔍 Отслеживать прогресс выполнения онлайн
+        </button>
+        <button type="button" id="successCrmBtn" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs transition">
+          📊 Открыть заказ в панели CRM
+        </button>
+        <button type="button" class="close-modal-btn w-full py-2 text-xs text-slate-500 hover:text-slate-800 font-semibold">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Detailed Order Management Modal in CRM -->
+  <div id="crmOrderDetailModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Технологическая карта заказа</span>
+          <h3 class="text-xl font-black text-slate-900 flex items-center gap-2">
+            <span id="crmModalOrderId">PMG-1048</span>
+          </h3>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" id="crmModalPrintBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition flex items-center gap-1">
+            🖨️ Печать техкарты
+          </button>
+          <button type="button" id="crmModalCloseBtn" class="text-slate-400 hover:text-slate-700 text-lg font-bold p-1">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Order Details Grid -->
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Left Column: Specs & Pipeline Controls (7 cols) -->
+        <div class="md:col-span-7 space-y-4">
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Название заказа</label>
+            <input type="text" id="crmModalOrderTitle" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 font-semibold text-slate-800 focus:ring-2 focus:ring-rose-500">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Этап воронки</label>
+              <select id="crmModalStageSelect" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 font-bold text-slate-800 bg-white">
+                <option value="new">📥 Новая заявка</option>
+                <option value="prepress">🔍 Препресс / Макеты</option>
+                <option value="queue">⏳ Очередь на печать</option>
+                <option value="printing">🖨️ В производстве (Печать)</option>
+                <option value="postpress">✂️ Постпечать и отделка</option>
+                <option value="qc_packing">📦 Контроль ОТК и упаковка</option>
+                <option value="delivery">🚚 Готов к выдаче / В доставке</option>
+                <option value="completed">✅ Выполнен и оплачен</option>
+                <option value="cancelled">❌ Отменен</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Печатная машина цеха</label>
+              <select id="crmModalMachineSelect" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 text-slate-800 bg-white font-medium">
+                <option value="Heidelberg Speedmaster XL 75-5+L">Heidelberg Speedmaster XL 75 (Офсет)</option>
+                <option value="HP Indigo 7900 Digital Press">HP Indigo 7900 (Цифровой офсет)</option>
+                <option value="Xerox Iridesse Production Press (6 цветов)">Xerox Iridesse (Цифра + золото/серебро)</option>
+                <option value="Mimaki UCJV300-160 УФ плоттер-каттер">Mimaki UCJV300-160 (УФ печать)</option>
+                <option value="Duplo DC-646 Автоматический финишер">Duplo DC-646 (Резка / биговка)</option>
+                <option value="Zünd G3 Цифровой раскроечный комплекс">Zünd G3 (Плоттерная резка)</option>
+                <option value="Пресс для горячего тиснения Heidelberg Tiegel">Heidelberg Tiegel (Тиснение Kurz)</option>
+                <option value="Шелкотрафаретный полуавтомат">Шелкотрафаретная линия</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Ответственный менеджер</label>
+              <select id="crmModalManagerSelect" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 text-slate-800 bg-white">
+                <option value="Дмитрий Воронов">Дмитрий Воронов</option>
+                <option value="Алексей Смирнов">Алексей Смирнов</option>
+                <option value="Марина Лапина">Марина Лапина</option>
+                <option value="Дежурный координатор">Дежурный координатор смены</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Статус оплаты</label>
+              <select id="crmModalPaidSelect" class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 text-slate-800 bg-white font-bold">
+                <option value="true">● Оплачен полностью (100%)</option>
+                <option value="false">○ Ожидает оплаты</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product Specifications Box -->
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/90 text-xs space-y-1.5">
+            <span class="text-[10px] font-bold uppercase text-slate-400 block mb-2">Технические характеристики тиража</span>
+            <div class="grid grid-cols-2 gap-2">
+              <div><span class="text-slate-400">Формат:</span> <strong id="crmModalSpecsFormat" class="text-slate-800"></strong></div>
+              <div><span class="text-slate-400">Тираж:</span> <strong id="crmModalSpecsQty" class="text-slate-800"></strong></div>
+              <div><span class="text-slate-400">Материал:</span> <strong id="crmModalSpecsPaper" class="text-slate-800"></strong></div>
+              <div><span class="text-slate-400">Цветность:</span> <strong id="crmModalSpecsColor" class="text-slate-800"></strong></div>
+            </div>
+            <div class="pt-1"><span class="text-slate-400">Отделка:</span> <strong id="crmModalSpecsFinishing" class="text-slate-800"></strong></div>
+          </div>
+
+          <!-- Attached Preflight Files -->
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Файлы макета (Препресс-контроль)</label>
+            <div id="crmModalFilesList" class="space-y-1.5"></div>
+          </div>
+        </div>
+
+        <!-- Right Column: Financials & Internal Notes (5 cols) -->
+        <div class="md:col-span-5 space-y-4">
+          <!-- Client Card -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+            <span class="text-[10px] font-bold uppercase text-slate-400 block mb-1">Контрагент</span>
+            <div class="font-bold text-sm text-slate-900" id="crmModalClientName"></div>
+            <div class="text-slate-600 mt-1" id="crmModalClientPhone"></div>
+            <div class="text-slate-400 text-[10px]" id="crmModalClientEmail"></div>
+          </div>
+
+          <!-- Financial Breakdown -->
+          <div class="p-4 bg-slate-900 text-white rounded-xl border border-slate-800 text-xs space-y-3">
+            <span class="text-[10px] font-bold uppercase text-slate-400 block">Финансовая смета</span>
+            <div>
+              <label class="block text-[10px] uppercase text-slate-400">Сумма заказа для клиента (₽)</label>
+              <input type="number" id="crmModalPriceTotal" class="w-full mt-1 px-3 py-1.5 text-base font-black bg-slate-800 rounded border border-slate-700 text-rose-400 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase text-slate-400">Себестоимость материалов и печати (₽)</label>
+              <input type="number" id="crmModalPricePrime" class="w-full mt-1 px-3 py-1.5 text-xs font-semibold bg-slate-800 rounded border border-slate-700 text-slate-300 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- Internal Timeline & Notes -->
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">Журнал заметок и изменений</label>
+            <div id="crmModalNotesList" class="space-y-1.5 max-h-40 overflow-y-auto mb-2"></div>
+            <div class="flex gap-2">
+              <input type="text" id="crmModalNewNoteInput" placeholder="Добавить комментарий по тиражу..." class="flex-1 px-3 py-1.5 text-xs rounded-lg border border-slate-200">
+              <button type="button" id="crmModalAddNoteBtn" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-bold">
+                Отправить
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
+        <button type="button" class="close-modal-btn px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-800">
+          Отмена
+        </button>
+        <button type="button" id="crmModalSaveBtn" class="px-6 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs rounded-xl shadow-md transition">
+          Сохранить изменения в CRM 💾
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Fast New Order Modal in CRM -->
+  <div id="crmNewOrderModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="modal-content bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-4">
+        <h3 class="text-base font-black text-slate-900">➕ Создать новый заказ в CRM</h3>
+        <button type="button" class="close-modal-btn text-slate-400 hover:text-slate-700 font-bold">✕</button>
+      </div>
+
+      <form id="crmNewOrderForm" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Наименование заказа *</label>
+          <input type="text" id="crmNewTitle" placeholder="Визитки Touche Cover 500 шт" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Компания / Клиент *</label>
+            <input type="text" id="crmNewClientName" placeholder="ООО 'Компания'" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Телефон *</label>
+            <input type="tel" id="crmNewClientPhone" placeholder="+7 (999) 000-00-00" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Категория</label>
+            <select id="crmNewCategory" class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white">
+              <option value="визитки">Визитки</option>
+              <option value="листовая">Листовки / Буклеты</option>
+              <option value="наклейки">Наклейки</option>
+              <option value="многостраничная">Каталоги</option>
+              <option value="упаковка">Коробки</option>
+              <option value="пакеты">Пакеты</option>
+              <option value="календари">Календари</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Формат</label>
+            <input type="text" id="crmNewFormat" placeholder="А4, 90х50 мм, 210х297" class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div class="col-span-2">
+            <label class="block font-bold text-slate-700 mb-1">Бумага / Материал</label>
+            <input type="text" id="crmNewPaper" placeholder="Мелованная 300г / Touche Cover" class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Тираж (шт) *</label>
+            <input type="number" id="crmNewQty" value="500" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Сумма заказа (₽) *</label>
+            <input type="number" id="crmNewPrice" value="5000" required class="w-full px-3 py-2 rounded-lg border border-slate-200 font-bold text-rose-600">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Срочность</label>
+            <select id="crmNewUrgency" class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white">
+              <option value="standard">Стандартный срок</option>
+              <option value="urgent">⚡ Срочно</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Назначить печатную машину</label>
+          <select id="crmNewMachine" class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white">
+            <option value="Heidelberg Speedmaster XL 75-5+L">Heidelberg Speedmaster XL 75 (Офсет)</option>
+            <option value="HP Indigo 7900 Digital Press">HP Indigo 7900 (Цифра)</option>
+            <option value="Xerox Iridesse Production Press (6 цветов)">Xerox Iridesse (Цифра)</option>
+            <option value="Mimaki UCJV300-160 УФ плоттер-каттер">Mimaki UCJV300-160 (УФ / Пленка)</option>
+          </select>
+        </div>
+
+        <div class="pt-3 flex justify-end gap-2">
+          <button type="button" class="close-modal-btn px-4 py-2 text-slate-500 font-bold">Отмена</button>
+          <button type="submit" class="px-5 py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-lg shadow-sm">
+            Создать заказ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Fast New Client Modal in CRM -->
+  <div id="crmNewClientModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="modal-content bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-4">
+        <h3 class="text-base font-black text-slate-900">➕ Добавить контрагента в базу</h3>
+        <button type="button" class="close-modal-btn text-slate-400 hover:text-slate-700 font-bold">✕</button>
+      </div>
+
+      <form id="crmNewClientForm" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Название компании / Бренд *</label>
+          <input type="text" id="crmNewClientNameInput" placeholder="ООО «Вектор Про»" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Контактное лицо</label>
+          <input type="text" id="crmNewClientPerson" placeholder="Константин Морозов" class="w-full px-3 py-2 rounded-lg border border-slate-200">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Телефон *</label>
+            <input type="tel" id="crmNewClientPhoneInput" placeholder="+7 (999) 000-00-00" required class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Email</label>
+            <input type="email" id="crmNewClientEmail" placeholder="order@vector.ru" class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">ИНН</label>
+            <input type="text" id="crmNewClientInn" placeholder="7704859123" class="w-full px-3 py-2 rounded-lg border border-slate-200">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Скидочный уровень</label>
+            <select id="crmNewClientTier" class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white">
+              <option value="Базовый 0%">Базовый 0%</option>
+              <option value="Silver 5%">Silver 5%</option>
+              <option value="Gold 10%">Gold 10%</option>
+              <option value="VIP 15%">VIP 15%</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Сфера деятельности</label>
+          <select id="crmNewClientCategory" class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white">
+            <option value="B2B Корпоративный">B2B Корпоративный</option>
+            <option value="HoReCa">HoReCa (Рестораны / Кофейни)</option>
+            <option value="Рекламное агентство">Рекламное агентство</option>
+            <option value="E-Commerce">E-Commerce / Ритейл</option>
+            <option value="Издательство">Издательство</option>
+          </select>
+        </div>
+
+        <div class="pt-3 flex justify-end gap-2">
+          <button type="button" class="close-modal-btn px-4 py-2 text-slate-500 font-bold">Отмена</button>
+          <button type="submit" class="px-5 py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-lg shadow-sm">
+            Сохранить клиента
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/mockData.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/crm.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

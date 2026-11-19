@@ -1,0 +1,197 @@
+/* PMG Typography & CRM Portal Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --primary-navy: #0f172a;
+  --secondary-navy: #1e293b;
+  --pmg-red: #e11d48;
+  --pmg-red-hover: #be123c;
+  --cmyk-cyan: #06b6d4;
+  --cmyk-magenta: #ec4899;
+  --cmyk-yellow: #eab308;
+  --cmyk-black: #0f172a;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* CMYK Dot Branding */
+.cmyk-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+.cmyk-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.cmyk-dot.cyan { background-color: var(--cmyk-cyan); }
+.cmyk-dot.magenta { background-color: var(--cmyk-magenta); }
+.cmyk-dot.yellow { background-color: var(--cmyk-yellow); }
+.cmyk-dot.black { background-color: var(--cmyk-black); }
+
+/* Glass Header */
+.glass-header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Kanban Columns & Cards */
+.kanban-col {
+  min-width: 290px;
+  max-width: 320px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.kanban-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: grab;
+}
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+.kanban-card:active {
+  cursor: grabbing;
+}
+.kanban-card.dragging {
+  opacity: 0.4;
+  transform: scale(0.97);
+}
+
+/* Badge Glows */
+.badge-urgent {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.4); }
+  50% { box-shadow: 0 0 0 4px rgba(225, 29, 72, 0); }
+}
+
+/* Modal animations */
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s ease-out;
+}
+
+.modal-content {
+  animation: modal-scale 0.25s ease-out;
+}
+
+@keyframes modal-scale {
+  from {
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Progress Tracker Roadmap */
+.tracker-step {
+  position: relative;
+}
+.tracker-step::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+.tracker-step:last-child::after {
+  display: none;
+}
+.tracker-step.completed::after {
+  background-color: #10b981;
+}
+
+/* Calculator Range Sliders */
+input[type=range] {
+  accent-color: #e11d48;
+}
+
+/* Tab active states */
+.tab-btn.active {
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Product Card Hover Zoom */
+.product-card {
+  transition: all 0.25s ease-in-out;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+.product-img {
+  transition: transform 0.4s ease;
+}
+
+/* Print simulation paper textures */
+.paper-spec-badge {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  border: 1px solid #cbd5e1;
+}
+
+/* Print Media Styles for Invoices and Tech Cards */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printTechCard, #printTechCard * {
+    visibility: visible;
+  }
+  #printTechCard {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white;
+  }
+}

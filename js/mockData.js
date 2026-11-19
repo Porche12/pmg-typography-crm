@@ -1,0 +1,1294 @@
+// PMG Catalog & Presets Data
+window.PMG_DATA = {
+  catalog: [
+    {
+      id: "prod-vizitki",
+      category: "визитки",
+      title: "Визитки премиум",
+      subtitle: "Touche Cover, Majestic, Шелкография, УФ лак",
+      desc: "Печать представительских и корпоративных визиток. Большой выбор дизайнерской бумаги, тиснение золотом и серебром, скругление углов.",
+      minRun: "от 100 шт",
+      leadTime: "от 1 часа",
+      priceFrom: 850,
+      badge: "Хит продаж",
+      img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80",
+      calcKey: "vizitki"
+    },
+    {
+      id: "prod-stikery",
+      category: "наклейки",
+      title: "Наклейки и стикерпаки",
+      subtitle: "Контурная резка, рулонные, влагостойкие, 3D смола",
+      desc: "Печать наклеек любой формы на японском оборудовании Mimaki и Zünd. Винил, бумага, Soft-Touch ламинация для стаканов, упаковки и техники.",
+      minRun: "от 50 шт",
+      leadTime: "от 2 часов",
+      priceFrom: 650,
+      badge: "Популярно",
+      img: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=600&q=80",
+      calcKey: "stikery"
+    },
+    {
+      id: "prod-listovki",
+      category: "листовая",
+      title: "Листовки и флаеры",
+      subtitle: "А4, А5, А6, Евро, цифра и офсет",
+      desc: "Идеальное решение для промо-акций и раздаточных материалов. Печать на немецком офсете Heidelberg от 500 шт или на цифре за пару часов.",
+      minRun: "от 100 шт",
+      leadTime: "от 2 часов",
+      priceFrom: 1100,
+      badge: "Срочно",
+      img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+      calcKey: "listovki"
+    },
+    {
+      id: "prod-buklety",
+      category: "листовая",
+      title: "Буклеты и лифлеты",
+      subtitle: "1-2-3 фальца, евробуклеты, гармошка",
+      desc: "Складные презентационные буклеты с четкой биговкой без заломов бумаги. Мелованная или дизайнерская бумага с защитным лаком.",
+      minRun: "от 100 шт",
+      leadTime: "1 рабочий день",
+      priceFrom: 2400,
+      badge: "Офсет / Цифра",
+      img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
+      calcKey: "buklety"
+    },
+    {
+      id: "prod-katalogi",
+      category: "многостраничная",
+      title: "Каталоги и брошюры",
+      subtitle: "На скрепке, пружине, КБС (термоклей PUR), болтах",
+      desc: "Печать рекламных, производственных каталогов и лукбуков. Высокая плотность блока, обложка с матовой ламинацией и выборочным 3D лаком.",
+      minRun: "от 20 шт",
+      leadTime: "от 2 дней",
+      priceFrom: 8900,
+      badge: "Премиум",
+      img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80",
+      calcKey: "katalogi"
+    },
+    {
+      id: "prod-upakovka",
+      category: "упаковка",
+      title: "Коробки и картонная упаковка",
+      subtitle: "Самосборные, кашированные, пеналы, шуберы",
+      desc: "Изготовление брендированной упаковки для косметики, электроники, одежды и подарков. Точная вырубка штампом, тиснение фольгой.",
+      minRun: "от 100 шт",
+      leadTime: "от 3 дней",
+      priceFrom: 12500,
+      badge: "Спецзаказ",
+      img: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80",
+      calcKey: "upakovka"
+    },
+    {
+      id: "prod-pakety",
+      category: "пакеты",
+      title: "Бумажные пакеты с логотипом",
+      subtitle: "Крафт, мелованная бумага, люверсы, шнуры",
+      desc: "Фирменные пакеты с усиленным дном и ручками из шнура или репсовой ленты. Выдерживают вес до 8 кг, отличная цветопередача.",
+      minRun: "от 100 шт",
+      leadTime: "от 2 дней",
+      priceFrom: 7800,
+      badge: "Брендинг",
+      img: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+      calcKey: "pakety"
+    },
+    {
+      id: "prod-kalendari",
+      category: "календари",
+      title: "Календари на 2026-2027 год",
+      subtitle: "Квартальные Трио, настенные перекидные, домики",
+      desc: "Шпигель с глянцевой УФ-лакировкой, индивидуальные сетки, часовые механизмы, магнитные курсоры. Лучший корпоративный подарок к сезону.",
+      minRun: "от 50 шт",
+      leadTime: "от 2 дней",
+      priceFrom: 5400,
+      badge: "Сезон 2026/27",
+      img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80",
+      calcKey: "kalendari"
+    },
+    {
+      id: "prod-papki",
+      category: "папки",
+      title: "Фирменные вырубные папки",
+      subtitle: "Картон 300г, прорезь под визитку, ламинация",
+      desc: "Папки для документов формата А4 с цельновырубным карманом и замком. Презентабельный вид для коммерческих предложений и конференций.",
+      minRun: "от 100 шт",
+      leadTime: "от 2 дней",
+      priceFrom: 6200,
+      badge: "Корпоративным",
+      img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+      calcKey: "listovki"
+    },
+    {
+      id: "prod-pos",
+      category: "pos",
+      title: "POS-материалы и Roll-Up",
+      subtitle: "Воблеры, шелфтокеры, роллапы, хардпостеры",
+      desc: "Оформление точек продаж, выставочных стендов и торговых сетей. Фигурная высечка, ножки из микрогофрокартона, пружинные ножки.",
+      minRun: "от 50 шт",
+      leadTime: "от 1 дня",
+      priceFrom: 3800,
+      badge: "Ритейл",
+      img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80",
+      calcKey: "stikery"
+    },
+    {
+      id: "prod-suveniry",
+      category: "сувениры",
+      title: "Брендированный мерч и сувениры",
+      subtitle: "Шопперы, ручки, ежедневники, УФ-печать",
+      desc: "Качественное нанесение логотипов на текстиль, пластик, металл, кожу. Стойкая УФ-печать и шелкография высокой яркости.",
+      minRun: "от 30 шт",
+      leadTime: "от 2 дней",
+      priceFrom: 4500,
+      badge: "B2B Мерч",
+      img: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+      calcKey: "stikery"
+    },
+    {
+      id: "prod-knigi",
+      category: "многостраничная",
+      title: "Печать книг и годовых отчетов",
+      subtitle: "Твердый и мягкий переплет, золочение обреза",
+      desc: "Типография печатает книги малыми и средними тиражами от 1 экземпляра. Спецотделка обложек, каптал, ляссе, выборочный лак.",
+      minRun: "от 10 шт",
+      leadTime: "от 4 дней",
+      priceFrom: 14000,
+      badge: "Издательствам",
+      img: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80",
+      calcKey: "katalogi"
+    }
+  ],
+
+  services: [
+    {
+      id: "serv-cifra",
+      title: "Цифровая печать",
+      subtitle: "HP Indigo & Xerox Iridesse",
+      desc: "Идеальна для срочных и малых тиражей. Готовность от 1 часа. Печать золотом, серебром, белилами и прозрачным защитным тонером.",
+      features: ["Тиражи от 1 экземпляра", "Печать за 60-120 минут", "Переменные данные и персонализация"]
+    },
+    {
+      id: "serv-offset",
+      title: "Офсетная печать",
+      subtitle: "Heidelberg Speedmaster XL 75-5+L",
+      desc: "Классическая многотиражная печать высочайшего немецкого качества с минимальной стоимостью одного оттиска. Скорость до 15 000 отт/час.",
+      features: ["Тиражи от 500 до сотен тысяч", "Минимальная цена за штуку", "Точное воспроизведение шкалы Pantone"]
+    },
+    {
+      id: "serv-uv",
+      title: "УФ-печать и Шелкография",
+      subtitle: "Mimaki & Полуавтоматические трафаретные линии",
+      desc: "Прямая печать УФ-отверждаемыми чернилами по любым поверхностям: стеклу, коже, дереву, пластику, металлизированным картонам.",
+      features: ["Выборочный 3D глянцевый лак", "Печать кроющими белилами", "Высокая износостойкость красок"]
+    },
+    {
+      id: "serv-postpress",
+      title: "Постпечатная обработка",
+      subtitle: "Duplo, Zünd, Heidelberg Tiegel, ламинаторы",
+      desc: "Полный замкнутый цикл финишной отделки: ламинация Soft-Touch, тиснение золотой и голографической фольгой, конгрев, высечка, КБС.",
+      features: ["Тиснение фольгой Kurz", "Ламинация бархатная Soft-Touch", "Вырубка штампами любой сложности"]
+    }
+  ],
+
+  reviews: [
+    {
+      author: "Елена Смирнова",
+      company: "ООО «Альфа Ритейл»",
+      rating: 5,
+      date: "14 ноября 2026",
+      text: "Сотрудничаем с типографией PMG более 4 лет. Всегда выручают со срочными каталогами и визитками к профильным выставкам. Качество печати на HP Indigo и цветопередача безупречны!"
+    },
+    {
+      author: "Артем Васильев",
+      company: "Сеть кофеен Flip Coffee",
+      rating: 5,
+      date: "08 ноября 2026",
+      text: "Заказываем брендированные крафт-стаканчики, стикерпаки и наклейки на дой-паки. Плоттерная резка Zünd идеальная до миллиметра. Очень удобно отслеживать заказы онлайн."
+    },
+    {
+      author: "Константин Морозов",
+      company: "Рекламное агентство BrandLab",
+      rating: 5,
+      date: "02 ноября 2026",
+      text: "PMG — одна из немногих типографий в Москве с реальным производством 24/7. Тираж в 20 000 буклетов на Heidelberg напечатали и сфальцевали раньше дедлайна. Рекомендую!"
+    },
+    {
+      author: "Мария Ковалева",
+      company: "Aura Organic",
+      rating: 5,
+      date: "27 октября 2026",
+      text: "Для косметического бренда крайне важна эстетика и тактильность. Бумага Touche Cover с золотым тиснением и Soft-Touch ламинация коробок превзошли все наши ожидания."
+    }
+  ]
+};
+
+
+// Full offline / GitHub Pages seed database
+window.PMG_INITIAL_DB = {
+  "settings": {
+    "companyName": "Типография PMG",
+    "tagline": "Полиграфические услуги полного цикла в Москве",
+    "phone": "+7 (495) 023-25-51",
+    "email": "zakaz@pmg.ru",
+    "address": "г. Москва, Ленинградский проспект, д. 80, к. 30",
+    "workHours": "Производство 24/7 | Отдел продаж: Пн-Пт 9:00 - 20:00",
+    "defaultMarkupPercent": 35,
+    "urgentMultiplier": 1.4
+  },
+  "clients": [
+    {
+      "id": "cl-5274",
+      "name": "ООО «Автотест Холдинг»",
+      "contactPerson": "Алексей Тестов",
+      "phone": "+7 (999) 777-66-55",
+      "email": "test@autotest.ru",
+      "inn": "",
+      "category": "Новый клиент с сайта",
+      "tier": "Базовый 0%",
+      "discount": 0,
+      "totalOrders": 1,
+      "totalSpent": 16500,
+      "notes": "Заказ создан через онлайн-калькулятор"
+    },
+    {
+      "id": "cl-101",
+      "name": "ООО «Альфа Ритейл»",
+      "contactPerson": "Елена Смирнова",
+      "phone": "+7 (916) 450-88-21",
+      "email": "e.smirnova@alfaretail.ru",
+      "inn": "7704859123",
+      "category": "B2B Корпоративный",
+      "tier": "VIP 15%",
+      "discount": 15,
+      "totalOrders": 14,
+      "totalSpent": 486000,
+      "notes": "Постоянный заказчик брендированной упаковки и каталогов."
+    },
+    {
+      "id": "cl-102",
+      "name": "Сеть кофеен «Flip Coffee»",
+      "contactPerson": "Артем Васильев",
+      "phone": "+7 (925) 312-77-44",
+      "email": "order@flipcoffee.ru",
+      "inn": "7714902341",
+      "category": "HoReCa",
+      "tier": "Gold 10%",
+      "discount": 10,
+      "totalOrders": 8,
+      "totalSpent": 215000,
+      "notes": "Заказывают крафт-стаканчики, наклейки на дой-пак, плейсматы."
+    },
+    {
+      "id": "cl-103",
+      "name": "Бренд косметики «Aura Organic»",
+      "contactPerson": "Мария Ковалева",
+      "phone": "+7 (903) 789-11-20",
+      "email": "maria@auraorganic.ru",
+      "inn": "7728491039",
+      "category": "E-Commerce",
+      "tier": "Silver 5%",
+      "discount": 5,
+      "totalOrders": 6,
+      "totalSpent": 168000,
+      "notes": "Требовательны к цветопробе и Soft-Touch ламинации."
+    },
+    {
+      "id": "cl-104",
+      "name": "Рекламное агентство «BrandLab»",
+      "contactPerson": "Константин Морозов",
+      "phone": "+7 (985) 664-99-01",
+      "email": "morozov@brandlab.agency",
+      "inn": "7731998240",
+      "category": "Агентство",
+      "tier": "VIP 15%",
+      "discount": 15,
+      "totalOrders": 22,
+      "totalSpent": 730000,
+      "notes": "Регулярные крупные тиражи буклетов и папок под конференции."
+    },
+    {
+      "id": "cl-105",
+      "name": "ИД «Деловой Вектор»",
+      "contactPerson": "Сергей Николаев",
+      "phone": "+7 (915) 234-88-77",
+      "email": "s.nikolaev@del-vector.ru",
+      "inn": "7709324108",
+      "category": "Издательство",
+      "tier": "Gold 10%",
+      "discount": 10,
+      "totalOrders": 5,
+      "totalSpent": 390000,
+      "notes": "Печать периодических журналов и годовых отчетов на КБС."
+    },
+    {
+      "id": "cl-106",
+      "name": "ООО «МедФарм Групп»",
+      "contactPerson": "Татьяна Григорьева",
+      "phone": "+7 (926) 551-09-88",
+      "email": "t.grigorieva@medpharm.ru",
+      "inn": "7701445982",
+      "category": "Фармацевтика",
+      "tier": "Silver 5%",
+      "discount": 5,
+      "totalOrders": 7,
+      "totalSpent": 284000,
+      "notes": "Инструкции для лекарств и сертифицированная FSC картонная упаковка."
+    },
+    {
+      "id": "cl-107",
+      "name": "IT-холдинг «Сфера Технологий»",
+      "contactPerson": "Денис Орлов",
+      "phone": "+7 (977) 123-45-67",
+      "email": "d.orlov@spheratech.ru",
+      "inn": "7736991045",
+      "category": "IT / Tech",
+      "tier": "Gold 10%",
+      "discount": 10,
+      "totalOrders": 9,
+      "totalSpent": 312000,
+      "notes": "Брендированный мерч, бейджи, стикерпаки и визитки с выборочным лаком."
+    },
+    {
+      "id": "cl-108",
+      "name": "Ювелирный дом «Русский Сапфир»",
+      "contactPerson": "Анна Белова",
+      "phone": "+7 (968) 890-44-33",
+      "email": "info@russiansapphire.ru",
+      "inn": "7705118902",
+      "category": "Премиум / Luxury",
+      "tier": "VIP 15%",
+      "discount": 15,
+      "totalOrders": 11,
+      "totalSpent": 520000,
+      "notes": "Тиснение золотом Kurz, бумага Touch Cover и кашированные премиум-коробки."
+    }
+  ],
+  "equipment": [
+    {
+      "id": "eq-1",
+      "name": "Heidelberg Speedmaster XL 75-5+L",
+      "type": "Офсетная печать",
+      "origin": "Германия",
+      "status": "running",
+      "statusText": "В работе: тираж 10 000 л.",
+      "speed": "15 000 отт/час",
+      "currentJob": "PMG-1049 (Флаеры А5 ООО «Альфа Ритейл»)",
+      "queueCount": 3,
+      "loadPercent": 88,
+      "lastMaintenance": "2026-11-10"
+    },
+    {
+      "id": "eq-2",
+      "name": "HP Indigo 7900 Digital Press",
+      "type": "Цифровая офсетная печать",
+      "origin": "Израиль",
+      "status": "running",
+      "statusText": "В работе: тираж 500 экз.",
+      "speed": "3 600 отт/час",
+      "currentJob": "PMG-1048 (Визитки Touche Cover с золотым тиснением)",
+      "queueCount": 4,
+      "loadPercent": 92,
+      "lastMaintenance": "2026-11-14"
+    },
+    {
+      "id": "eq-3",
+      "name": "Xerox Iridesse Production Press (6 цветов)",
+      "type": "Цифровая листовая печать",
+      "origin": "США",
+      "status": "running",
+      "statusText": "В работе: меню ресторана",
+      "speed": "120 стр/мин",
+      "currentJob": "PMG-1052 (Буклеты А4 BrandLab с серебряным тонером)",
+      "queueCount": 2,
+      "loadPercent": 75,
+      "lastMaintenance": "2026-11-16"
+    },
+    {
+      "id": "eq-4",
+      "name": "Mimaki UCJV300-160 УФ плоттер-каттер",
+      "type": "Широкоформатная и рулонная УФ",
+      "origin": "Япония",
+      "status": "idle",
+      "statusText": "Готов к запуску",
+      "speed": "25.8 м²/час",
+      "currentJob": "Ожидает макет PMG-1045",
+      "queueCount": 1,
+      "loadPercent": 35,
+      "lastMaintenance": "2026-11-12"
+    },
+    {
+      "id": "eq-5",
+      "name": "Duplo DC-646 Автоматический финишер",
+      "type": "Постпечатная резка и биговка",
+      "origin": "Япония",
+      "status": "running",
+      "statusText": "В работе: биговка и продольная резка",
+      "speed": "30 листов/мин",
+      "currentJob": "PMG-1044 (Евробуклеты 2 фальца)",
+      "queueCount": 2,
+      "loadPercent": 60,
+      "lastMaintenance": "2026-11-08"
+    },
+    {
+      "id": "eq-6",
+      "name": "Zünd G3 Цифровой раскроечный комплекс",
+      "type": "Плоттерная резка и фрезеровка",
+      "origin": "Швейцария",
+      "status": "running",
+      "statusText": "В работе: фигурная резка наклеек",
+      "speed": "1 000 мм/сек",
+      "currentJob": "PMG-1042 (Фигурные стикерпаки Flip Coffee)",
+      "queueCount": 3,
+      "loadPercent": 82,
+      "lastMaintenance": "2026-11-15"
+    },
+    {
+      "id": "eq-7",
+      "name": "Пресс для горячего тиснения Heidelberg Tiegel",
+      "type": "Тиснение фольгой и конгрев",
+      "origin": "Германия",
+      "status": "idle",
+      "statusText": "Прогрет, готов к тиснению",
+      "speed": "2 500 отт/час",
+      "currentJob": "Ожидает PMG-1048",
+      "queueCount": 2,
+      "loadPercent": 45,
+      "lastMaintenance": "2026-11-05"
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat-1",
+      "name": "Бумага мелованная глянцевая UPM 130 г/м²",
+      "category": "Листовая бумага",
+      "unit": "листов (SRA3)",
+      "inStock": 50000,
+      "minAlert": 10000,
+      "pricePerUnit": 4.8,
+      "status": "ok"
+    },
+    {
+      "id": "mat-2",
+      "name": "Бумага мелованная матовая UPM 300 г/м²",
+      "category": "Плотная бумага",
+      "unit": "листов (SRA3)",
+      "inStock": 18400,
+      "minAlert": 5000,
+      "pricePerUnit": 9.6,
+      "status": "ok"
+    },
+    {
+      "id": "mat-3",
+      "name": "Дизайнерская бумага Touche Cover Черный 301 г/м²",
+      "category": "Премиум материалы",
+      "unit": "листов (70x100)",
+      "inStock": 1250,
+      "minAlert": 400,
+      "pricePerUnit": 145,
+      "status": "ok"
+    },
+    {
+      "id": "mat-4",
+      "name": "Дизайнерская бумага Majestic Сияние Золота 290 г/м²",
+      "category": "Премиум материалы",
+      "unit": "листов (70x100)",
+      "inStock": 320,
+      "minAlert": 500,
+      "pricePerUnit": 160,
+      "status": "low"
+    },
+    {
+      "id": "mat-5",
+      "name": "Крафт-бумага натуральная бурая 200 г/м²",
+      "category": "Эко материалы",
+      "unit": "листов (SRA3)",
+      "inStock": 9800,
+      "minAlert": 3000,
+      "pricePerUnit": 7.2,
+      "status": "ok"
+    },
+    {
+      "id": "mat-6",
+      "name": "Пленка самоклеящаяся Ritrama белая глянцевая",
+      "category": "Самоклеящиеся материалы",
+      "unit": "пог. метров (рулон 1.6м)",
+      "inStock": 640,
+      "minAlert": 150,
+      "pricePerUnit": 220,
+      "status": "ok"
+    },
+    {
+      "id": "mat-7",
+      "name": "Пленка для ламинации Soft-Touch 32 мкм",
+      "category": "Расходники ламинации",
+      "unit": "пог. метров",
+      "inStock": 3400,
+      "minAlert": 1000,
+      "pricePerUnit": 18.5,
+      "status": "ok"
+    },
+    {
+      "id": "mat-8",
+      "name": "Фольга для горячего тиснения Kurz Золото матовое 428",
+      "category": "Расходники тиснения",
+      "unit": "рулонов (120м)",
+      "inStock": 12,
+      "minAlert": 5,
+      "pricePerUnit": 1850,
+      "status": "ok"
+    },
+    {
+      "id": "mat-9",
+      "name": "Переплетный картон каппа 2.0 мм",
+      "category": "Картон для коробок",
+      "unit": "листов (100x120)",
+      "inStock": 190,
+      "minAlert": 200,
+      "pricePerUnit": 140,
+      "status": "low"
+    }
+  ],
+  "orders": [
+    {
+      "id": "PMG-1054",
+      "title": "Визитки Touche Cover с золотым тиснением (Автотест)",
+      "category": "визитки",
+      "categoryName": "Визитки",
+      "client": {
+        "name": "ООО «Автотест Холдинг»",
+        "contactPerson": "Алексей Тестов",
+        "phone": "+7 (999) 777-66-55",
+        "email": "test@autotest.ru",
+        "id": "cl-5274"
+      },
+      "specs": {
+        "format": "90х50 мм",
+        "paper": "Touche Cover Черный 301г",
+        "quantity": 500,
+        "colorSides": "4+0",
+        "finishing": [
+          "Тиснение фольгой Kurz",
+          "Скругление 4-х углов"
+        ],
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 16500,
+        "perUnit": "33.0",
+        "primeCost": 6500,
+        "margin": 10000,
+        "paid": false
+      },
+      "stage": "printing",
+      "manager": "Дежурный менеджер",
+      "machine": "HP Indigo 7900 Digital Press",
+      "preflightStatus": "checking",
+      "files": [],
+      "notes": [
+        {
+          "author": "Система CRM",
+          "text": "Статус изменен: Новая заявка ➔ В производстве (Печать)",
+          "date": "19.11.2026, 16:07:45"
+        },
+        {
+          "author": "Мастер цеха",
+          "text": "Печать выполнена на HP Indigo, тираж передан на тиснение.",
+          "date": "19.11.2026, 16:07:45"
+        }
+      ],
+      "createdAt": "2026-11-19T13:07:45.274Z",
+      "updatedAt": "2026-11-19T13:07:45.292Z"
+    },
+    {
+      "id": "PMG-1041",
+      "title": "Стикербуки А5 с контурной резкой на виниле",
+      "category": "наклейки",
+      "categoryName": "Наклейки и стикеры",
+      "client": {
+        "id": "cl-107",
+        "name": "IT-холдинг «Сфера Технологий»",
+        "contactPerson": "Денис Орлов",
+        "phone": "+7 (977) 123-45-67",
+        "email": "d.orlov@spheratech.ru"
+      },
+      "specs": {
+        "format": "А5 (148х210 мм)",
+        "paper": "Виниловая пленка Ritrama + Soft-touch",
+        "quantity": 300,
+        "colorSides": "4+0 (полноцветная УФ печать)",
+        "finishing": [
+          "Контурная плоттерная надсечка",
+          "Сборка в пружинный стикербук"
+        ],
+        "deadline": "2026-11-20T17:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 48500,
+        "primeCost": 19200,
+        "margin": 29300,
+        "paid": true,
+        "paidAmount": 48500,
+        "status": "paid"
+      },
+      "stage": "new",
+      "manager": "Алексей Смирнов",
+      "machine": "Mimaki UCJV300-160",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "stickerbook_sphere_v3.pdf",
+          "size": "32.4 MB",
+          "uploadDate": "2026-11-19 14:15"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Денис Орлов",
+          "text": "Нужно успеть до пятницы к IT-конференции!",
+          "date": "2026-11-19 14:15"
+        }
+      ],
+      "createdAt": "2026-11-19T14:15:00",
+      "updatedAt": "2026-11-19T14:15:00"
+    },
+    {
+      "id": "PMG-1042",
+      "title": "Фигурные наклейки на кофейные стаканы",
+      "category": "наклейки",
+      "categoryName": "Наклейки и стикеры",
+      "client": {
+        "id": "cl-102",
+        "name": "Сеть кофеен «Flip Coffee»",
+        "contactPerson": "Артем Васильев",
+        "phone": "+7 (925) 312-77-44",
+        "email": "order@flipcoffee.ru"
+      },
+      "specs": {
+        "format": "Круглые d=65 мм",
+        "paper": "Самоклейка полуглянцевая влагостойкая",
+        "quantity": 5000,
+        "colorSides": "4+0 (полноцветная)",
+        "finishing": [
+          "Плоттерная резка в листах"
+        ],
+        "deadline": "2026-11-21T12:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 26500,
+        "primeCost": 9800,
+        "margin": 16700,
+        "paid": true,
+        "paidAmount": 26500,
+        "status": "paid"
+      },
+      "stage": "prepress",
+      "manager": "Марина Лапина",
+      "machine": "Zünd G3",
+      "preflightStatus": "checking",
+      "files": [
+        {
+          "name": "flip_stickers_65mm.ai",
+          "size": "12.8 MB",
+          "uploadDate": "2026-11-19 13:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Марина Лапина",
+          "text": "Проверяем вылеты 2 мм под контурную резку",
+          "date": "2026-11-19 13:10"
+        }
+      ],
+      "createdAt": "2026-11-19T13:00:00",
+      "updatedAt": "2026-11-19T13:10:00"
+    },
+    {
+      "id": "PMG-1043",
+      "title": "Каталог премиум-косметики (48 страниц на КБС)",
+      "category": "многостраничная",
+      "categoryName": "Каталоги и брошюры",
+      "client": {
+        "id": "cl-103",
+        "name": "Бренд косметики «Aura Organic»",
+        "contactPerson": "Мария Ковалева",
+        "phone": "+7 (903) 789-11-20",
+        "email": "maria@auraorganic.ru"
+      },
+      "specs": {
+        "format": "А4 (210х297 мм)",
+        "paper": "Блок: 150г меловка матовая, Обложка: 300г Soft-Touch + 3D лак",
+        "quantity": 1000,
+        "colorSides": "4+4 (полноцветная с двух сторон)",
+        "finishing": [
+          "КБС (термоклей PUR)",
+          "Ламинация Soft-Touch обложки",
+          "Выборочный 3D УФ-лак"
+        ],
+        "deadline": "2026-11-24T18:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 142000,
+        "primeCost": 65000,
+        "margin": 77000,
+        "paid": true,
+        "paidAmount": 71000,
+        "status": "partially_paid"
+      },
+      "stage": "queue",
+      "manager": "Дмитрий Воронов",
+      "machine": "Heidelberg Speedmaster XL 75-5+L",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "aura_catalog_winter2026_print.pdf",
+          "size": "84.5 MB",
+          "uploadDate": "2026-11-18 16:30"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Дмитрий Воронов",
+          "text": "Цветопроба обложки согласована заказчиком. Поставлен в план на Heidelberg.",
+          "date": "2026-11-19 10:20"
+        }
+      ],
+      "createdAt": "2026-11-18T16:30:00",
+      "updatedAt": "2026-11-19T10:20:00"
+    },
+    {
+      "id": "PMG-1044",
+      "title": "Евробуклеты 2 фальца для выставки Expo-2026",
+      "category": "листовая",
+      "categoryName": "Буклеты и лифлеты",
+      "client": {
+        "id": "cl-104",
+        "name": "Рекламное агентство «BrandLab»",
+        "contactPerson": "Константин Морозов",
+        "phone": "+7 (985) 664-99-01",
+        "email": "morozov@brandlab.agency"
+      },
+      "specs": {
+        "format": "А4 в намотку до Евро (99х210 мм)",
+        "paper": "Мелованная 170г матовая",
+        "quantity": 3000,
+        "colorSides": "4+4 (двусторонняя печать)",
+        "finishing": [
+          "2 фальца гармошкой",
+          "ВД-лак защитный"
+        ],
+        "deadline": "2026-11-20T14:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 39800,
+        "primeCost": 15400,
+        "margin": 24400,
+        "paid": true,
+        "paidAmount": 39800,
+        "status": "paid"
+      },
+      "stage": "postpress",
+      "manager": "Алексей Смирнов",
+      "machine": "Duplo DC-646",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "brandlab_euroleaflet_final.pdf",
+          "size": "18.3 MB",
+          "uploadDate": "2026-11-18 11:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Цех печати",
+          "text": "Отпечатано на Xerox Iridesse. Передано на фальцовку на Duplo.",
+          "date": "2026-11-19 12:40"
+        }
+      ],
+      "createdAt": "2026-11-18T11:00:00",
+      "updatedAt": "2026-11-19T12:40:00"
+    },
+    {
+      "id": "PMG-1045",
+      "title": "Самосборные коробки для парфюма с тиснением",
+      "category": "упаковка",
+      "categoryName": "Упаковка и коробки",
+      "client": {
+        "id": "cl-108",
+        "name": "Ювелирный дом «Русский Сапфир»",
+        "contactPerson": "Анна Белова",
+        "phone": "+7 (968) 890-44-33",
+        "email": "info@russiansapphire.ru"
+      },
+      "specs": {
+        "format": "80х80х120 мм (пенал со склейкой)",
+        "paper": "Картон графический 320г + каширование",
+        "quantity": 1500,
+        "colorSides": "1+0 (шелкография глубокий синий)",
+        "finishing": [
+          "Тиснение золотой фольгой Kurz",
+          "Матовая ламинация",
+          "Вырубка штампом"
+        ],
+        "deadline": "2026-11-25T16:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 94000,
+        "primeCost": 38000,
+        "margin": 56000,
+        "paid": true,
+        "paidAmount": 94000,
+        "status": "paid"
+      },
+      "stage": "new",
+      "manager": "Марина Лапина",
+      "machine": "Heidelberg Tiegel",
+      "preflightStatus": "warning",
+      "files": [
+        {
+          "name": "sapphire_box_cut_contour.cdr",
+          "size": "15.0 MB",
+          "uploadDate": "2026-11-19 14:40"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Марина Лапина",
+          "text": "Нужно проверить векторный контур вырубного штампа на пересечение линий",
+          "date": "2026-11-19 14:45"
+        }
+      ],
+      "createdAt": "2026-11-19T14:40:00",
+      "updatedAt": "2026-11-19T14:45:00"
+    },
+    {
+      "id": "PMG-1046",
+      "title": "Квартальные календари Трио Премиум 2027",
+      "category": "календари",
+      "categoryName": "Календари",
+      "client": {
+        "id": "cl-101",
+        "name": "ООО «Альфа Ритейл»",
+        "contactPerson": "Елена Смирнова",
+        "phone": "+7 (916) 450-88-21",
+        "email": "e.smirnova@alfaretail.ru"
+      },
+      "specs": {
+        "format": "Шпигель 297х210 мм, 3 пружины, подложки 297х140 мм",
+        "paper": "Шпигель: картон 300г + глянцевый УФ лак, Блоки: офсет 80г",
+        "quantity": 800,
+        "colorSides": "4+0 (шпигель и подложки)",
+        "finishing": [
+          "Курсор на ленте",
+          "Люверс (пикколо)",
+          "3 металлические белые пружины"
+        ],
+        "deadline": "2026-11-26T18:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 188000,
+        "primeCost": 82000,
+        "margin": 106000,
+        "paid": true,
+        "paidAmount": 188000,
+        "status": "paid"
+      },
+      "stage": "queue",
+      "manager": "Дмитрий Воронов",
+      "machine": "Heidelberg Speedmaster XL 75-5+L",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "calendar_trio_alfa_2027.pdf",
+          "size": "45.0 MB",
+          "uploadDate": "2026-11-17 15:20"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Дмитрий Воронов",
+          "text": "Сетки блоков стандартные 'Серебро-Синий' зарезервированы на складе.",
+          "date": "2026-11-18 10:00"
+        }
+      ],
+      "createdAt": "2026-11-17T15:20:00",
+      "updatedAt": "2026-11-18T10:00:00"
+    },
+    {
+      "id": "PMG-1047",
+      "title": "Пакеты из крафт-бумаги с шелкографией",
+      "category": "пакеты",
+      "categoryName": "Бумажные пакеты",
+      "client": {
+        "id": "cl-102",
+        "name": "Сеть кофеен «Flip Coffee»",
+        "contactPerson": "Артем Васильев",
+        "phone": "+7 (925) 312-77-44",
+        "email": "order@flipcoffee.ru"
+      },
+      "specs": {
+        "format": "240х320х90 мм (под зерновой кофе)",
+        "paper": "Бурый крафт 120г с кручеными ручками",
+        "quantity": 2000,
+        "colorSides": "2+0 (шелкография: черный + белый)",
+        "finishing": [
+          "Укрепленное дно и подручники"
+        ],
+        "deadline": "2026-11-22T17:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 58000,
+        "primeCost": 24000,
+        "margin": 34000,
+        "paid": true,
+        "paidAmount": 58000,
+        "status": "paid"
+      },
+      "stage": "postpress",
+      "manager": "Алексей Смирнов",
+      "machine": "Шелкотрафаретный полуавтомат",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "flip_kraft_bag_2sides.pdf",
+          "size": "7.1 MB",
+          "uploadDate": "2026-11-17 09:40"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Цех",
+          "text": "Шелкография напечатана, сохнет. Передано в сборку.",
+          "date": "2026-11-19 11:30"
+        }
+      ],
+      "createdAt": "2026-11-17T09:40:00",
+      "updatedAt": "2026-11-19T11:30:00"
+    },
+    {
+      "id": "PMG-1048",
+      "title": "Визитки Touche Cover с золотым тиснением",
+      "category": "визитки",
+      "categoryName": "Визитки",
+      "client": {
+        "id": "cl-101",
+        "name": "ООО «Альфа Ритейл»",
+        "contactPerson": "Елена Смирнова",
+        "phone": "+7 (916) 450-88-21",
+        "email": "e.smirnova@alfaretail.ru"
+      },
+      "specs": {
+        "format": "90х50 мм (европейский стандарт)",
+        "paper": "Touche Cover Черный 301г (бархатистая текстура)",
+        "quantity": 500,
+        "colorSides": "Шелкография серебром 1+0",
+        "finishing": [
+          "Тиснение золотой фольгой Kurz",
+          "Скругление углов 5 мм"
+        ],
+        "deadline": "2026-11-20T12:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 18500,
+        "primeCost": 7200,
+        "margin": 11300,
+        "paid": true,
+        "paidAmount": 18500,
+        "status": "paid"
+      },
+      "stage": "printing",
+      "manager": "Дмитрий Воронов",
+      "machine": "HP Indigo 7900 Digital Press",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "makett_touch_gold_v2.pdf",
+          "size": "14.2 MB",
+          "uploadDate": "2026-11-19 11:20"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Дмитрий Воронов",
+          "text": "Макет проверен. Запущен на HP Indigo с белым праймером.",
+          "date": "2026-11-19 13:10"
+        }
+      ],
+      "createdAt": "2026-11-19T11:20:00",
+      "updatedAt": "2026-11-19T13:10:00"
+    },
+    {
+      "id": "PMG-1049",
+      "title": "Флаеры А5 тиражные (акция «Черная пятница»)",
+      "category": "листовая",
+      "categoryName": "Листовки и флаеры",
+      "client": {
+        "id": "cl-101",
+        "name": "ООО «Альфа Ритейл»",
+        "contactPerson": "Елена Смирнова",
+        "phone": "+7 (916) 450-88-21",
+        "email": "e.smirnova@alfaretail.ru"
+      },
+      "specs": {
+        "format": "А5 (148х210 мм)",
+        "paper": "Мелованная глянцевая 130г UPM",
+        "quantity": 10000,
+        "colorSides": "4+4 (двусторонняя полноцвет)",
+        "finishing": [
+          "Резка в размер на гильотине"
+        ],
+        "deadline": "2026-11-20T16:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 44000,
+        "primeCost": 19500,
+        "margin": 24500,
+        "paid": true,
+        "paidAmount": 44000,
+        "status": "paid"
+      },
+      "stage": "printing",
+      "manager": "Алексей Смирнов",
+      "machine": "Heidelberg Speedmaster XL 75-5+L",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "black_friday_a5_cmyk.pdf",
+          "size": "22.0 MB",
+          "uploadDate": "2026-11-18 18:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Оператор офсета",
+          "text": "Офсетная приладка выполнена, печатаем тираж со скоростью 14 000 отт/час.",
+          "date": "2026-11-19 12:00"
+        }
+      ],
+      "createdAt": "2026-11-18T18:00:00",
+      "updatedAt": "2026-11-19T12:00:00"
+    },
+    {
+      "id": "PMG-1050",
+      "title": "Подарочные сертификаты на бумаге Majestic",
+      "category": "листовая",
+      "categoryName": "Сертификаты и открытки",
+      "client": {
+        "id": "cl-103",
+        "name": "Бренд косметики «Aura Organic»",
+        "contactPerson": "Мария Ковалева",
+        "phone": "+7 (903) 789-11-20",
+        "email": "maria@auraorganic.ru"
+      },
+      "specs": {
+        "format": "Евро (210х100 мм)",
+        "paper": "Majestic Сияние Золота 290г",
+        "quantity": 400,
+        "colorSides": "4+4 + Выборочный 3D лак",
+        "finishing": [
+          "Выборочный лак",
+          "Персонализация (переменные номера)"
+        ],
+        "deadline": "2026-11-19T19:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 21600,
+        "primeCost": 8900,
+        "margin": 12700,
+        "paid": true,
+        "paidAmount": 21600,
+        "status": "paid"
+      },
+      "stage": "qc_packing",
+      "manager": "Марина Лапина",
+      "machine": "Xerox Iridesse",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "certificate_majestic_gold.pdf",
+          "size": "11.5 MB",
+          "uploadDate": "2026-11-18 09:15"
+        }
+      ],
+      "notes": [
+        {
+          "author": "ОТК",
+          "text": "Тираж проверен. Выборочный лак идеальный. Упаковано в крафт-коробку со стикером.",
+          "date": "2026-11-19 14:00"
+        }
+      ],
+      "createdAt": "2026-11-18T09:15:00",
+      "updatedAt": "2026-11-19T14:00:00"
+    },
+    {
+      "id": "PMG-1051",
+      "title": "Папки картонные вырубные с карманом",
+      "category": "папки",
+      "categoryName": "Папки и презентации",
+      "client": {
+        "id": "cl-104",
+        "name": "Рекламное агентство «BrandLab»",
+        "contactPerson": "Константин Морозов",
+        "phone": "+7 (985) 664-99-01",
+        "email": "morozov@brandlab.agency"
+      },
+      "specs": {
+        "format": "А4 (вырубной штамп №12 с замком и прорезью для визитки)",
+        "paper": "Картон двустороннего мелования 300г",
+        "quantity": 600,
+        "colorSides": "4+0 (полноцветная печать снаружи)",
+        "finishing": [
+          "Матовая ламинация 30 мкм",
+          "Вырубка на тигеле",
+          "Ручная сборка"
+        ],
+        "deadline": "2026-11-19T16:00",
+        "urgency": "urgent"
+      },
+      "price": {
+        "total": 37500,
+        "primeCost": 14800,
+        "margin": 22700,
+        "paid": true,
+        "paidAmount": 37500,
+        "status": "paid"
+      },
+      "stage": "delivery",
+      "manager": "Алексей Смирнов",
+      "machine": "Heidelberg Tiegel",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "folder_brandlab_a4_diecut.pdf",
+          "size": "19.8 MB",
+          "uploadDate": "2026-11-17 12:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Логистика",
+          "text": "Передано курьеру Достависта. Доставка по адресу ул. Тверская 12 к 1.",
+          "date": "2026-11-19 14:30"
+        }
+      ],
+      "createdAt": "2026-11-17T12:00:00",
+      "updatedAt": "2026-11-19T14:30:00"
+    },
+    {
+      "id": "PMG-1052",
+      "title": "Годовой отчет АО «ТрансЛогистик» (120 стр)",
+      "category": "многостраничная",
+      "categoryName": "Каталоги и брошюры",
+      "client": {
+        "id": "cl-105",
+        "name": "ИД «Деловой Вектор»",
+        "contactPerson": "Сергей Николаев",
+        "phone": "+7 (915) 234-88-77",
+        "email": "s.nikolaev@del-vector.ru"
+      },
+      "specs": {
+        "format": "220х290 мм",
+        "paper": "Блок: 130г матовая Garda, Обложка: 350г шелкография + блинтовое тиснение",
+        "quantity": 500,
+        "colorSides": "4+4 (блок), 2+0 (обложка)",
+        "finishing": [
+          "КБС на PUR-клее",
+          "Тиснение блинтовое",
+          "Шелкография"
+        ],
+        "deadline": "2026-11-18T18:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 195000,
+        "primeCost": 89000,
+        "margin": 106000,
+        "paid": true,
+        "paidAmount": 195000,
+        "status": "paid"
+      },
+      "stage": "completed",
+      "manager": "Дмитрий Воронов",
+      "machine": "Heidelberg Speedmaster XL 75-5+L",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "annual_report_translogistic_2026.pdf",
+          "size": "112.0 MB",
+          "uploadDate": "2026-11-12 10:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Дмитрий Воронов",
+          "text": "Заказ успешно сдан заказчику. Подписаны закрывающие акты УПД.",
+          "date": "2026-11-18 17:45"
+        }
+      ],
+      "createdAt": "2026-11-12T10:00:00",
+      "updatedAt": "2026-11-18T17:45:00"
+    },
+    {
+      "id": "PMG-1053",
+      "title": "Хлопковые шопперы с шелкографией",
+      "category": "сувениры",
+      "categoryName": "Сувенирная продукция",
+      "client": {
+        "id": "cl-107",
+        "name": "IT-холдинг «Сфера Технологий»",
+        "contactPerson": "Денис Орлов",
+        "phone": "+7 (977) 123-45-67",
+        "email": "d.orlov@spheratech.ru"
+      },
+      "specs": {
+        "format": "38х42 см, длинные ручки 70 см",
+        "paper": "100% органический хлопок плотностью 240 г/м² (Черный)",
+        "quantity": 400,
+        "colorSides": "Шелкография пластизолевыми красками 3+0",
+        "finishing": [
+          "Термофиксация",
+          "Индивидуальный полибэг"
+        ],
+        "deadline": "2026-11-17T18:00",
+        "urgency": "standard"
+      },
+      "price": {
+        "total": 76000,
+        "primeCost": 34000,
+        "margin": 42000,
+        "paid": true,
+        "paidAmount": 76000,
+        "status": "paid"
+      },
+      "stage": "completed",
+      "manager": "Марина Лапина",
+      "machine": "Карусельный станок для шелкографии",
+      "preflightStatus": "approved",
+      "files": [
+        {
+          "name": "sphera_shopper_art.ai",
+          "size": "8.5 MB",
+          "uploadDate": "2026-11-11 14:00"
+        }
+      ],
+      "notes": [
+        {
+          "author": "Марина Лапина",
+          "text": "Отгружено самовывозом со склада на Ленинградском проспекте.",
+          "date": "2026-11-17 16:30"
+        }
+      ],
+      "createdAt": "2026-11-11T14:00:00",
+      "updatedAt": "2026-11-17T16:30:00"
+    }
+  ]
+};
