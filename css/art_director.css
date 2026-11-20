@@ -1,0 +1,427 @@
+/* ==========================================================================
+   ИПК «ЮЖНЫЙ УРАЛ» (Основан в 1920 г.) — ELITE ART DIRECTION STYLESHEET
+   Conceived under Master Prompt: Elite Web Design Art Director (No AI Slop)
+   Typography: Swiss / International Typographic Style (Rich Ink & Paper)
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --yu-burgundy: #8b1e1e;
+  --yu-burgundy-dark: #6e1515;
+  --yu-burgundy-light: #ab2828;
+  --yu-orange: #e35205;
+  --yu-orange-hover: #c44300;
+  --yu-green: #15803d;
+  --yu-green-hover: #166534;
+
+  /* Ink & Paper Neutrals */
+  --yu-ink-950: #080c16;
+  --yu-ink-900: #0f172a;
+  --yu-ink-800: #1e293b;
+  --yu-ink-700: #334155;
+  --yu-ink-600: #475569;
+  --yu-ink-muted: #64748b;
+  --yu-ink-light: #94a3b8;
+  --yu-canvas: #f8fafc;
+  --yu-paper: #ffffff;
+  --yu-border: #e2e8f0;
+  --yu-border-strong: #cbd5e1;
+
+  /* CMYK Process Colors for print calibration markers */
+  --cmyk-c: #00a3e0;
+  --cmyk-m: #e4007f;
+  --cmyk-y: #ffd100;
+  --cmyk-k: #1e1e1e;
+
+  /* Motion Tokens (transitions.dev) */
+  --t-quick: 150ms;
+  --t-fast: 250ms;
+  --t-medium: 350ms;
+  --t-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-bounce: cubic-bezier(0.34, 1.36, 0.64, 1);
+}
+
+/* FOGRA Print Calibration Strip */
+.cmyk-control-bar {
+  display: flex;
+  height: 4px;
+  width: 100%;
+}
+.cmyk-control-bar span {
+  flex: 1;
+  height: 100%;
+}
+.cmyk-control-bar .c-cyan { background: var(--cmyk-c); }
+.cmyk-control-bar .c-magenta { background: var(--cmyk-m); }
+.cmyk-control-bar .c-yellow { background: var(--cmyk-y); }
+.cmyk-control-bar .c-black { background: var(--cmyk-k); }
+.cmyk-control-bar .c-burgundy { background: var(--yu-burgundy); }
+
+/* Master Top Status Bar */
+.yu-topbar {
+  background: var(--yu-ink-950);
+  color: #e2e8f0;
+  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.yu-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #4ade80;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.yu-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* Header & Brand Identity */
+.yu-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--yu-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+.yu-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.yu-logo-seal {
+  background: var(--yu-burgundy);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(139, 30, 30, 0.25);
+}
+.yu-brand-title {
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--yu-ink-900);
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+}
+.yu-brand-subtitle {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--yu-ink-muted);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Navigation Menu */
+.yu-nav-link {
+  color: var(--yu-ink-700);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--t-quick) var(--t-ease);
+}
+.yu-nav-link:hover {
+  color: var(--yu-burgundy);
+  background: #fdf2f2;
+}
+
+/* Hero Section — Architectural & Monumental */
+.yu-hero {
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--yu-border);
+  overflow: hidden;
+}
+.yu-hero-kpi-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fee2e2;
+  color: var(--yu-burgundy);
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+.yu-hero-title {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--yu-ink-950);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.yu-hero-lead {
+  font-size: 17px;
+  color: var(--yu-ink-600);
+  line-height: 1.55;
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+/* Industrial Action Buttons */
+.yu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--t-quick) var(--t-ease), box-shadow var(--t-quick) var(--t-ease), background-color var(--t-quick) var(--t-ease);
+}
+.yu-btn:active {
+  transform: scale(0.97);
+}
+.yu-btn-primary {
+  background: var(--yu-orange);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(227, 82, 5, 0.35);
+}
+.yu-btn-primary:hover {
+  background: var(--yu-orange-hover);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(227, 82, 5, 0.45);
+}
+.yu-btn-burgundy {
+  background: var(--yu-burgundy);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(139, 30, 30, 0.3);
+}
+.yu-btn-burgundy:hover {
+  background: var(--yu-burgundy-dark);
+  color: #ffffff;
+}
+.yu-btn-outline {
+  background: #ffffff;
+  color: var(--yu-ink-800);
+  border: 1px solid var(--yu-border-strong);
+}
+.yu-btn-outline:hover {
+  background: #f1f5f9;
+  border-color: var(--yu-ink-600);
+}
+
+/* Industrial KPI Grid Bar */
+.yu-kpi-bar {
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 36px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
+}
+.yu-kpi-val {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  line-height: 1;
+}
+.yu-kpi-lbl {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Section Header Styling */
+.yu-section-header {
+  margin-bottom: 36px;
+}
+.yu-section-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--yu-burgundy);
+  background: #fee2e2;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.yu-section-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--yu-ink-950);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.yu-section-desc {
+  font-size: 15px;
+  color: var(--yu-ink-muted);
+  max-width: 680px;
+}
+
+/* Product Card Grid */
+.yu-card {
+  background: #ffffff;
+  border: 1px solid var(--yu-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform var(--t-fast) var(--t-ease), box-shadow var(--t-fast) var(--t-ease), border-color var(--t-fast) var(--t-ease);
+}
+.yu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--yu-border-strong);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+.yu-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: #f1f5f9;
+}
+.yu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.yu-card:hover .yu-card-img {
+  transform: scale(1.05);
+}
+.yu-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+.yu-card-body {
+  padding: 20px;
+}
+.yu-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--yu-ink-900);
+  margin-bottom: 6px;
+}
+.yu-card-desc {
+  font-size: 13px;
+  color: var(--yu-ink-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.yu-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--yu-border);
+  font-size: 12px;
+}
+.yu-card-price {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--yu-burgundy);
+}
+
+/* Equipment Fleet Showcase */
+.yu-machine-card {
+  background: #ffffff;
+  border: 1px solid var(--yu-border);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  transition: all var(--t-fast) var(--t-ease);
+}
+.yu-machine-card:hover {
+  border-color: var(--yu-burgundy);
+  box-shadow: 0 12px 28px rgba(139, 30, 30, 0.08);
+}
+.yu-machine-flag {
+  font-size: 22px;
+}
+.yu-machine-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--yu-ink-900);
+  margin: 6px 0;
+}
+.yu-machine-type {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--yu-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.yu-machine-spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--yu-border);
+}
+
+/* Preflight Guidelines Grid */
+.yu-preflight-card {
+  background: #f8fafc;
+  border: 1px solid var(--yu-border);
+  border-radius: 10px;
+  padding: 18px;
+  height: 100%;
+}
+.yu-preflight-icon {
+  width: 36px;
+  height: 36px;
+  background: #fee2e2;
+  color: var(--yu-burgundy);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+  .yu-hero-title {
+    font-size: 30px;
+  }
+  .yu-hero-lead {
+    font-size: 15px;
+  }
+  .yu-kpi-bar {
+    padding: 16px;
+  }
+  .yu-kpi-val {
+    font-size: 24px;
+  }
+}
